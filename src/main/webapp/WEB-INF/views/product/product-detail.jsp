@@ -46,7 +46,7 @@
 				<div class="bredcrumbWrap">
 					<div class="container breadcrumbs" role="navigation"
 						aria-label="breadcrumbs">
-						<a href="/" title="Back to the home page">Home</a><span
+						<a href="/" title="Back to the home page">user.home</a><span
 							aria-hidden="true">›</span><span>${product.product.name}</span>
 					</div>
 				</div>

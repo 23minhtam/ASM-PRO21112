@@ -25,10 +25,8 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="language-dropdown">
-						<span class="language-dd">English</span>
-						<ul id="language">
-							<li class="">Việt Nam</li>
-						</ul>
+						<a class="language-dd" href="?lang=us">English</a>
+						<a class="language-dd" href="?lang=vi">Việt Nam</a>
 					</div>
 					<p class="phone-no">
 						<i class="anm anm-phone-s"></i> +8999999999
@@ -47,8 +45,8 @@
 	                            <li><a href="#">Sản phẩm yêu thích</a></li>
 	                    </c:if>
 	                    <c:if test="${empty sessionScope.user }">
-	                            <li><a href="/login">Login</a></li>
-	                            <li><a href="/register">Tạo tài khoản</a></li>
+	                            <li><a href="/login"><s:message code="user.login"/></a></li>
+	                            <li><a href="/register"><s:message code="user.taotaikhoan"/></a></li>
 	                    </c:if>
 	                    <c:if test="${not empty sessionScope.userAdmin}">
 		                    <li><a href="/admin">Admin</a></li>
@@ -81,15 +79,14 @@
 					<nav class="grid__item" id="AccessibleNav">
 						<!-- for mobile -->
 						<ul id="siteNav" class="site-nav medium right hidearrow">
-							<li class="lvl1 parent megamenu"><a href="/">Trang chủ <i
+							<li class="lvl1 parent megamenu"><a href="/"><s:message code="user.trangchu"/> <i
 									class="anm anm-angle-down-l"></i></a></li>
-							<li class="lvl1 parent megamenu"><a href="/product/list?kw=">Sản
-									phẩm <i class="anm anm-angle-down-l"></i>
+							<li class="lvl1 parent megamenu"><a href="/product/list?kw="><s:message code="navbar.sanpham"/> <i class="anm anm-angle-down-l"></i>
 							</a>
 								<div class="megamenu style4">
 									<ul class="grid grid--uniform mmWrapper">
 										<li class="grid__item lvl-1 col-md-3 col-lg-3"><a
-											href="#" class="site-nav lvl-1">Danh mục sản phẩm</a>
+											href="#" class="site-nav lvl-1"><s:message code="navbar.danhmucsanpham"/></a>
 											<ul class="subLinks">
 												<c:forEach var="item" items="${cates}" end="4">
 													<li class="lvl-2"><a
@@ -110,11 +107,10 @@
 											</ul></li>
 									</ul>
 								</div></li>
-							<li class="lvl1 parent megamenu"><a href="#">Thương
-									hiệu <i class="anm anm-angle-down-l"></i>
+							<li class="lvl1 parent megamenu"><a href="#"> <s:message code="user.thuonghieu"/> <i class="anm anm-angle-down-l"></i>
 							</a>
 								
-							<li class="lvl1"><a href="#"><b>Buy Now!</b> <i
+							<li class="lvl1"><a href="#"><b> <s:message code="navbar.muangay"/> </b> <i
 									class="anm anm-angle-down-l"></i></a></li>
 						</ul>
 					</nav>

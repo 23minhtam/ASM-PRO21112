@@ -10,7 +10,7 @@
                                 
                                 <ul class="addressFooter">
                                     <li><i class="icon anm anm-map-marker-al"></i>
-                                        <p>Quận 12, TPHCM</p>
+                                        <p><s:message code="user.diachi"/></p>
                                     </li>
                                     <li class="phone"><i class="icon anm anm-phone-l"></i>
                                         <p>037 4809 753</p>
@@ -20,7 +20,7 @@
                                     </li>
                                 </ul>
                                 <div class="footer-social">
-                                    <h4 class="h4">Kết nối với chúng tôi</h4>
+                                    <h4 class="h4"><s:message code="user.connectwithwe"/></h4>
                                     <ul class="list--inline site-footer__social-icons social-icons">
                                         <li><a class="social-icons__link" href="#" target="_blank"
                                                 title="Belle Multipurpose Bootstrap 4 Template on Facebook"><i
@@ -46,21 +46,21 @@
                             <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
                                 <h4 class="h4">Informations</h4>
                                 <ul>
-                                    <li><a href="#">About us</a></li>
-                                    <li><a href="#">Careers</a></li>
-                                    <li><a href="#">Privacy policy</a></li>
-                                    <li><a href="#">Terms &amp; condition</a></li>
-                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#"> <s:message code="user.aboutus"/></a></li>
+                                    <li><a href="#"> <s:message code="user.careers"/></a></li>
+                                    <li><a href="#"> <s:message code="user.privacypolicy"/></a></li>
+                                    <li><a href="#"><s:message code="user.termscondition"/>	</a></li>
+                                    <li><a href="#"><s:message code="user.myaccount"/>	</a></li>
                                 </ul>
                             </div>
                             <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                                <h4 class="h4">Customer Services</h4>
+                                <h4 class="h4"><s:message code="user.myaccount"/></h4>
                                 <ul>
-                                    <li><a href="#">Request Personal Data</a></li>
-                                    <li><a href="#">FAQ's</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="#">Orders and Returns</a></li>
-                                    <li><a href="#">Support Center</a></li>
+                                    <li><a href="#"><s:message code="user.requestpersonaldata"/></a></li>
+                                    <li><a href="#"><s:message code="user.faqs"/></a></li>
+                                    <li><a href="#"><s:message code="user.contactUs"/></a></li>
+                                    <li><a href="#"><s:message code="user.orderandreturn"/></a></li>
+                                    <li><a href="#"><s:message code="user.supportcenter"/></a></li>
                                 </ul>
                             </div>
                             

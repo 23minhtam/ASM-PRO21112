@@ -1,8 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ page pageEncoding="utf-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
+
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html>
 
 <!-- belle/home5-cosmetic.html   11 Nov 2019 12:25:38 GMT -->
 
@@ -54,7 +56,7 @@
 					<div class="row m-5">
 						<div class="col-12 col-sm-12 col-md-12 col-lg-12 ">
 							<div class="section-header text-center">
-								<h2 class="h2">Sản phẩm mới</h2>
+								<h2 class="h2"> <s:message code="user.home"/> </h2>
 							</div>
 						</div>
 					</div>
@@ -126,8 +128,7 @@
 					<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="section-header text-center">
 							<a href="/product/list?kw=" class="btn"
-								style="vertical-align: middle; text-align: center;">TẤT CẢ
-								SẢN PHẨM</a>
+								style="vertical-align: middle; text-align: center;">user.allproduct</a>
 						</div>
 					</div>
 				</div>
@@ -142,17 +143,14 @@
 							<ul class="display-table store-info">
 								<li class="display-table-cell"><i
 									class="icon anm anm-truck-l"></i>
-									<h5>Miễn phí vận chuyển</h5> <span class="sub-text"> Đối
-										với đơn từ 10000$ trong nội thành TPHCM </span></li>
+									<h5> <s:message code="user.mienphivanchuyen"/></h5> <span class="sub-text"> <s:message code="user.mmienphivanchuyen"/></span></li>
 								<li class="display-table-cell"><i
 									class="icon anm anm-money-bill-ar"></i>
-									<h5>Nhiều khuyến mãi hấp dẫn</h5> <span class="sub-text">
-										Hàng ngàn ưu đãi cực sốc được cập nhật mỗi ngày </span></li>
+									<h5><s:message code="user.khuyenmaihapdan"/></h5> <span class="sub-text">
+										<s:message code="user.mkhuyenmaihapdan"/></span></li>
 								<li class="display-table-cell"><i
 									class="icon anm anm-comments-l"></i>
-									<h5>Sản phẩm chính hãng</h5> <span class="sub-text"> Cam
-										kết hoàn tiền 300% giá trị sản phẩm nếu phát hiện hàng không
-										chính hãng </span></li>
+									<h5><s:message code="user.sanphamchinhhang"/></h5> <span class="sub-text"> <s:message code="user.msanphamchinhhang"/> </span></li>
 							</ul>
 						</div>
 					</div>
