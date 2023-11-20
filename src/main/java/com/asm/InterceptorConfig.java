@@ -9,17 +9,15 @@ import com.asm.interceptor.GlobalInterceptor;
 
 @Configuration
 public class InterceptorConfig {
-	@Autowired GlobalInterceptor globalinterceptor;
-	@Autowired 
+	@Autowired
+	GlobalInterceptor globalinterceptor;
+	@Autowired
 	AuthInterceptor auth;
 
-
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(globalinterceptor)
-			.addPathPatterns("/**")
-			.excludePathPatterns("/admin/**","/assets/**");
-		registry.addInterceptor(auth)
-			.addPathPatterns("/admin/**", "/order/**");
+		registry.addInterceptor(globalinterceptor).addPathPatterns("/**").excludePathPatterns("/admin/**",
+				"/assets/**");
+		registry.addInterceptor(auth).addPathPatterns("/admin/**", "/order/**");
 	}
-	
+
 }

@@ -51,72 +51,78 @@ public class UserRestController {
 			return ResponseEntity.ok(aService.findByUsername(username));
 		}
 	}
+
 	@GetMapping("/authorities")
-	public Map<String, Object> getAuthority(){
+	public Map<String, Object> getAuthority() {
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("accounts",aService.findAll());
+		map.put("accounts", aService.findAll());
 		map.put("roles", aService.findAllRole());
-		map.put("authorities",aService.findAllAuthorities());
+		map.put("authorities", aService.findAllAuthorities());
 		return map;
 	}
+
 	@GetMapping("/search")
-	public List<Account> searchAccount(@RequestParam("kw") Optional<String> kw){
-		String keyword = kw.orElse(null);		
-		if(keyword != null) {
-			return aService.findByFullname("%"+keyword+"%");
-		}else {
+	public List<Account> searchAccount(@RequestParam("kw") Optional<String> kw) {
+		String keyword = kw.orElse(null);
+		if (keyword != null) {
+			return aService.findByFullname("%" + keyword + "%");
+		} else {
 			return this.getAllAccount();
 		}
 	}
+
 	@GetMapping("/authorities/search")
-	public List<Account> searchAccountByUsername(@RequestParam("kw") Optional<String> kw){
-		String keyword = kw.orElse(null);		
-		if(keyword != null) {
-			return aService.findByUsernameLike("%"+keyword+"%");
-		}else {
+	public List<Account> searchAccountByUsername(@RequestParam("kw") Optional<String> kw) {
+		String keyword = kw.orElse(null);
+		if (keyword != null) {
+			return aService.findByUsernameLike("%" + keyword + "%");
+		} else {
 			return this.getAllAccount();
 		}
 	}
+
 	@PostMapping("")
-	public ResponseEntity<Account> postAccount(@RequestBody Account Account){
-		if(aService.existsById(Account.getUsername())) {
+	public ResponseEntity<Account> postAccount(@RequestBody Account Account) {
+		if (aService.existsById(Account.getUsername())) {
 			return ResponseEntity.badRequest().build();
-		}else {
+		} else {
 			return ResponseEntity.ok(aService.save(Account));
 		}
 	}
+
 	@PostMapping("/authorities")
 	public RoleDetail postAuthorities(@RequestBody RoleDetail authority) {
 		return aService.saveRoleDetail(authority);
 	}
-	
+
 	@PutMapping("/{username}")
-	public ResponseEntity<Account> putAccount(@PathVariable("username") String username, @RequestBody Account Account){
-		if(!aService.existsById(username)) {
+	public ResponseEntity<Account> putAccount(@PathVariable("username") String username, @RequestBody Account Account) {
+		if (!aService.existsById(username)) {
 			return ResponseEntity.notFound().build();
-		}else {
+		} else {
 			return ResponseEntity.ok(aService.save(Account));
 		}
 	}
+
 	@DeleteMapping("/{username}")
-	public ResponseEntity<Void> deleteAccount(@PathVariable("username") String username){
-		if(!aService.existsById(username)) {
+	public ResponseEntity<Void> deleteAccount(@PathVariable("username") String username) {
+		if (!aService.existsById(username)) {
 			return ResponseEntity.notFound().build();
-		}else {
+		} else {
 			Account Account = aService.findByUsername(username);
 			String filename = Account.getPhoto();
 			System.out.println(filename);
-			if(!filename.equalsIgnoreCase("logo.jpg")) {
+			if (!filename.equalsIgnoreCase("logo.jpg")) {
 				uService.delete("account", filename);
 			}
 			aService.deleteByUsername(username);
 			return ResponseEntity.ok().build();
 		}
 	}
+
 	@DeleteMapping("/authorities/{id}")
 	public void deleteAuthorities(@PathVariable("id") Long id) {
 		aService.deleteRoleDetail(id);
 	}
-	
-}
 
+}

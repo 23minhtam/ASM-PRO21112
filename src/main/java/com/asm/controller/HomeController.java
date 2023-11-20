@@ -31,7 +31,7 @@ public class HomeController {
 	SessionService session;
 	@Autowired
 	AccountService aService;
-	@Autowired 
+	@Autowired
 	MailerService mailer;
 
 	@RequestMapping("/admin")
@@ -52,31 +52,32 @@ public class HomeController {
 	}
 
 	@GetMapping("/register")
-	public String register(	@ModelAttribute Account account) {
+	public String register(@ModelAttribute Account account) {
 		return "register";
 	}
+
 	@PostMapping("/register")
-	public String signup(Model model,
-			@ModelAttribute Account account) {
-		if(aService.existsById(account.getUsername())) {
-			model.addAttribute("error", "Đã tồn tại username "+account.getUsername());
+	public String signup(Model model, @ModelAttribute Account account) {
+		if (aService.existsById(account.getUsername())) {
+			model.addAttribute("error", "Đã tồn tại username " + account.getUsername());
 			return "register";
-		}else {
+		} else {
 			account.setActivated(true);
-			
+
 			account.setPhoto("logo.jpg");
-			
+
 			Role r = new Role();
 			r.setRole("user");
 			RoleDetail rd = new RoleDetail();
 			rd.setAccount(account);
 			rd.setRole(r);
-			
+
 			aService.save(account);
 			aService.saveRoleDetail(rd);
 			return "redirect:/register/success";
 		}
 	}
+
 	@RequestMapping("/register/success")
 	public String registerSuccess(Model model) {
 		model.addAttribute("message", "Đăng ký thành công");
@@ -88,26 +89,25 @@ public class HomeController {
 		model.addAttribute("message", message);
 		return "login";
 	}
-	
+
 	@PostMapping("/login")
-	public String login(@RequestParam("username") String username,
-			@RequestParam("password") String password, 
+	public String login(@RequestParam("username") String username, @RequestParam("password") String password,
 			Model model) {
 		try {
 			Account account = aService.findByUsername(username);
-			if(!account.getPassword().equals(password)) {
+			if (!account.getPassword().equals(password)) {
 				model.addAttribute("message", "Invalid password");
 				return "home/index";
-			}else {
+			} else {
 				String uri = session.get("security-uri");
-					session.set("user", account);
-					if(this.checkAdmin(account)) {
-						session.set("userAdmin", "admin");
-					}
-					model.addAttribute("message", "Login success");
-					return "home/index";
+				session.set("user", account);
+				if (this.checkAdmin(account)) {
+					session.set("userAdmin", "admin");
+				}
+				model.addAttribute("message", "Login success");
+				return "home/index";
 //				}
-					
+
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -117,13 +117,14 @@ public class HomeController {
 	}
 
 	public Boolean checkAdmin(Account account) {
-		for(RoleDetail roleDetail : account.getRoleDetails()) {
-			if(roleDetail.getRole().getRole().equals("staff") || roleDetail.getRole().getRole().equals("director")) {
+		for (RoleDetail roleDetail : account.getRoleDetails()) {
+			if (roleDetail.getRole().getRole().equals("staff") || roleDetail.getRole().getRole().equals("director")) {
 				return true;
 			}
 		}
 		return false;
 	}
+
 	@RequestMapping("/logout")
 	public String logoutSuccess(Model model) {
 		session.remove("user");
@@ -133,31 +134,31 @@ public class HomeController {
 		model.addAttribute("message", "Đăng xuất thành công");
 		return "login";
 	}
-	
+
 	@GetMapping("forgot-password")
 	public String forgot() {
 		return "forgot";
 	}
-	
+
 	@PostMapping("forgot-password")
 	public String forgot(@RequestParam("username") String username, Model model) {
 		try {
 			Account account = aService.findByUsername(username);
 			String to = account.getEmail();
 			String email = to.substring(0, 2);
-			
+
 			double randomDouble = Math.random();
-            randomDouble = randomDouble * 1000000 + 1;
-            int randomInt = (int) randomDouble;
-			
+			randomDouble = randomDouble * 1000000 + 1;
+			int randomInt = (int) randomDouble;
+
 			String subject = "Lấy lại mật khẩu";
-			String body = "Mật khẩu của bạn là:"+randomInt;
+			String body = "Mật khẩu của bạn là:" + randomInt;
 			mailer.send(to, subject, body);
-			
+
 			account.setPassword(String.valueOf(randomInt));
 			aService.save(account);
-			
-			model.addAttribute("message", "Mật khẩu mới đã được gửi đến mail "+email+"***");
+
+			model.addAttribute("message", "Mật khẩu mới đã được gửi đến mail " + email + "***");
 		} catch (Exception e) {
 			// TODO: handle exception
 			model.addAttribute("message", "Invalid Username");

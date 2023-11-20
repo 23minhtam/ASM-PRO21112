@@ -5,8 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.asm.bean.OrderDetail;
 
-
 @Repository
-public interface OrderDetailRepo extends JpaRepository<OrderDetail, Long>{
+public interface OrderDetailRepo extends JpaRepository<OrderDetail, Long> {
 
 }

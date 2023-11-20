@@ -66,15 +66,15 @@ public class ProductRestController {
 	}
 
 	@GetMapping("/search")
-	public List<Product> searchProduct(@RequestParam("kw") Optional<String> kw){
-		String keyword = kw.orElse(null);		
-		if(keyword != null) {
-			return pService.findByName("%"+keyword+"%");
-		}else {
+	public List<Product> searchProduct(@RequestParam("kw") Optional<String> kw) {
+		String keyword = kw.orElse(null);
+		if (keyword != null) {
+			return pService.findByName("%" + keyword + "%");
+		} else {
 			return pService.findAll();
 		}
 	}
-	
+
 	@PostMapping("")
 	public Product postProduct(@RequestBody JsonNode data) {
 		return pService.save(data);
@@ -91,33 +91,35 @@ public class ProductRestController {
 
 	@DeleteMapping("/{id}")
 	public void deleteProduct(@PathVariable("id") Long id) {
-			Product product = pService.findById(id);
-			String images = product.getImages();
-			TypeReference<List<String>> typeString = new TypeReference<List<String>>() {
-			};
-			ObjectMapper mapper = new ObjectMapper();
-			try {
-				List<String> list = mapper.readValue(images, typeString);
-				System.out.println(list);
-				for(String filename : list) {
-					if(!filename.equalsIgnoreCase("logo.jpg")) {
-						uService.delete("product", filename);
-					}
+		Product product = pService.findById(id);
+		String images = product.getImages();
+		TypeReference<List<String>> typeString = new TypeReference<List<String>>() {
+		};
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			List<String> list = mapper.readValue(images, typeString);
+			System.out.println(list);
+			for (String filename : list) {
+				if (!filename.equalsIgnoreCase("logo.jpg")) {
+					uService.delete("product", filename);
 				}
-				List<ProductCategory> productCates = pService.findByProductId(id);
-				for(ProductCategory productCate : productCates) {
-					pService.deleteProductCateById(productCate.getId());
-				}
-				pService.deleteById(id);
-			} catch (Exception e) {
-				// TODO: handle exception
 			}
+			List<ProductCategory> productCates = pService.findByProductId(id);
+			for (ProductCategory productCate : productCates) {
+				pService.deleteProductCateById(productCate.getId());
+			}
+			pService.deleteById(id);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 //			
 	}
+
 	@DeleteMapping("/productcategory/{id}")
-	public void deleteProductCategory(@PathVariable("id") Long id){
+	public void deleteProductCategory(@PathVariable("id") Long id) {
 		pService.deleteProductCateById(id);
 	}
+
 	@PostMapping("/productcategory")
 	public ProductCategory postProductCategory(@RequestBody ProductCategory productCates) {
 		return pService.saveProductCates(productCates);

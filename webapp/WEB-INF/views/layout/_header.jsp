@@ -114,9 +114,10 @@
 											</ul></li>
 									</ul>
 								</div></li>
-							<li class="lvl1 parent megamenu"><a href="#"> <s:message
+							<li class="lvl1 parent megamenu"><a href="/order/wishlist"> <s:message
 										code="user.thuonghieu" /> <i class="anm anm-angle-down-l"></i>
-							</a>
+							</a></li>
+							<li><a href="/brand/list">Sản phẩm yêu thích</a></li>
 							<li class="lvl1"><a href="#"><b> <s:message
 											code="navbar.muangay" />
 								</b> <i class="anm anm-angle-down-l"></i></a></li>

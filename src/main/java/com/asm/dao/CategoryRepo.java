@@ -9,9 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import com.asm.bean.Category;
 
-
 @Repository
-public interface CategoryRepo extends JpaRepository<Category, String>{
+public interface CategoryRepo extends JpaRepository<Category, String> {
 	@Query("SELECT c FROM Category c WHERE c.name LIKE :name")
 	List<Category> findByName(@Param("name") String name);
 }

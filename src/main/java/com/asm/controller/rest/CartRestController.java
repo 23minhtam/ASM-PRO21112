@@ -12,7 +12,9 @@ import com.asm.service.ProductService;
 @RestController
 @CrossOrigin("*")
 public class CartRestController {
-	@Autowired ProductService pService;
+	@Autowired
+	ProductService pService;
+
 	@RequestMapping("/rest/products/{id}")
 	public Product getOne(@PathVariable("id") Long id) {
 		return pService.findById(id);

@@ -20,5 +20,5 @@ public interface OrderService {
 	List<Order> findOrderInMonth(Integer month);
 
 	Integer countOrderInMonth(Integer month);
-	
+
 }

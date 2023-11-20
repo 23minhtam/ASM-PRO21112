@@ -27,7 +27,7 @@ public interface ProductService {
 	void deleteById(Long id);
 
 	List<ProductCategory> findProductCategory();
-	
+
 	List<ProductCategory> findByProductId(Long id);
 
 	Product save(JsonNode data);
@@ -37,29 +37,27 @@ public interface ProductService {
 	ProductCategory saveProductCates(ProductCategory productCates);
 
 	List<Map<String, Object>> findProductByCreateDateDESC();
-	
+
 	Page<Product> searchProductByName(Optional<String> kw, Optional<Integer> p);
 
 	Page<Product> findProductByBrand(Optional<String> bid, Optional<Integer> p);
 
 	Page<Product> findProductByCategory(Optional<String> cid, Optional<Integer> p);
-	
+
 	Page<Product> findProductByListBrand(List<String> bid, Optional<Integer> p);
-	
+
 	Page<Product> findProductLessThanPrice(Double price, Optional<Integer> p);
-	
+
 	Page<Product> findProductBetweenPrice(Double min, Double max, Optional<Integer> p);
-	
+
 	Page<Product> findByPriceGreaterThanEqual(Double price, Optional<Integer> p);
-	
+
 	List<Map<String, Object>> listProductSearch(Page<Product> lstProduct);
 
 	Map<String, Object> ProductDetail(Long id);
-	
+
 	Page<Product> findProductByListCategory(List<String> cid, Optional<Integer> p);
-	
-	
-	
+
 //	Page<Product> findPageProduct(Optional<String> kw, Optional<String> cid, Optional<String> brandid, Optional<Integer> p);
 //	
 //	List<Map<String, Object>> findProductByKeywordAndPage(Optional<String> kw, Optional<String> cid, Optional<String> brandid, Optional<Integer> p);

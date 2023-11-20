@@ -146,63 +146,66 @@ public class ProductServiceImpl implements ProductService {
 //			return page;
 //		}
 //	}
-	
+
 	@Override
-	public Page<Product> searchProductByName(Optional<String> kw, Optional<Integer> p){
+	public Page<Product> searchProductByName(Optional<String> kw, Optional<Integer> p) {
 		String keyword = kw.orElse(session.getValue("keyword", ""));
 		session.set("keyword", keyword);
 		Pageable pageable = PageRequest.of(p.orElse(0), 12);
-		return pRepo.findByKeyword("%"+keyword+"%", pageable);
+		return pRepo.findByKeyword("%" + keyword + "%", pageable);
 	}
-	
-	@Override 
-	public Page<Product> findProductByBrand(Optional<String> bid, Optional<Integer> p){
+
+	@Override
+	public Page<Product> findProductByBrand(Optional<String> bid, Optional<Integer> p) {
 		String brandId = bid.orElse(session.getValue("brandId", ""));
 		session.set("brandId", brandId);
 		Pageable pageable = PageRequest.of(p.orElse(0), 12);
 		return pRepo.findByBrand(brandId, pageable);
 	}
-	
-	@Override 
-	public Page<Product> findProductByCategory(Optional<String> cid, Optional<Integer> p){
+
+	@Override
+	public Page<Product> findProductByCategory(Optional<String> cid, Optional<Integer> p) {
 		String categoryId = cid.orElse(session.getValue("categoryId", ""));
 		session.set("categoryId", categoryId);
 		Pageable pageable = PageRequest.of(p.orElse(0), 12);
 		return pRepo.findByCategory(categoryId, pageable);
 	}
-	
+
 	@Override
-	public Page<Product> findProductByListBrand(List<String> bid, Optional<Integer> p){
+	public Page<Product> findProductByListBrand(List<String> bid, Optional<Integer> p) {
 		session.set("lstBrandId", bid);
 		Pageable pageable = PageRequest.of(p.orElse(0), 12);
 		return pRepo.findByListBrand(bid, pageable);
 	}
+
 	@Override
-	public Page<Product> findProductLessThanPrice(Double price, Optional<Integer> p){
+	public Page<Product> findProductLessThanPrice(Double price, Optional<Integer> p) {
 		session.set("price", price);
 		Pageable pageable = PageRequest.of(p.orElse(0), 12);
 		return pRepo.findByPriceLessThanEqual(price, pageable);
 	}
-	
+
 	@Override
-	public Page<Product> findProductBetweenPrice(Double min, Double max, Optional<Integer> p){
+	public Page<Product> findProductBetweenPrice(Double min, Double max, Optional<Integer> p) {
 		session.set("minPrice", min);
 		session.set("maxPrice", max);
 		Pageable pageable = PageRequest.of(p.orElse(0), 12);
 		return pRepo.findByPriceBetween(min, max, pageable);
 	}
-	
+
 	@Override
-	public Page<Product> findByPriceGreaterThanEqual(Double price, Optional<Integer> p){
+	public Page<Product> findByPriceGreaterThanEqual(Double price, Optional<Integer> p) {
 		session.set("price", price);
 		Pageable pageable = PageRequest.of(p.orElse(0), 12);
 		return pRepo.findByPriceGreaterThanEqual(price, pageable);
 	}
+
 	@Override
-	public List<Map<String, Object>> listProductSearch(Page<Product> lstProduct){
+	public List<Map<String, Object>> listProductSearch(Page<Product> lstProduct) {
 		List<Product> products = lstProduct.getContent();
-		
-		TypeReference<List<String>> typeString = new TypeReference<List<String>>() {};
+
+		TypeReference<List<String>> typeString = new TypeReference<List<String>>() {
+		};
 		ObjectMapper mapper = new ObjectMapper();
 		List<String> images = new ArrayList<String>();
 		List<Map<String, Object>> db = new ArrayList<Map<String, Object>>();
@@ -239,11 +242,12 @@ public class ProductServiceImpl implements ProductService {
 		}
 		return map;
 	}
-	public Page<Product> findProductByListCategory(List<String> cid,  Optional<Integer> p){
+
+	public Page<Product> findProductByListCategory(List<String> cid, Optional<Integer> p) {
 		Pageable page = PageRequest.of(p.orElse(0), 6);
 		return pRepo.findByListCategory(cid, page);
 	}
-	
+
 //	@Override
 //	public List<Map<String, Object>> findProductByKeywordAndPage(Optional<String> kw, Optional<String> cid, Optional<String> bid,
 //			Optional<Integer> p) {

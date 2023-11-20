@@ -13,8 +13,9 @@ import com.asm.dao.BrandRepo;
 import com.asm.service.BrandService;
 
 @Service
-public class BrandServiceImpl implements BrandService{
-	@Autowired BrandRepo bRepo;
+public class BrandServiceImpl implements BrandService {
+	@Autowired
+	BrandRepo bRepo;
 
 	@Override
 	public List<Brand> findAll() {
@@ -47,5 +48,5 @@ public class BrandServiceImpl implements BrandService{
 		System.out.println(kw);
 		return bRepo.findByName(kw);
 	}
-	
+
 }

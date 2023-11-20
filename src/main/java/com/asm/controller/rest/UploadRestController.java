@@ -42,11 +42,12 @@ public class UploadRestController {
 		node.put("size", saveFile.length());
 		return node;
 	}
+
 	@PostMapping("/admin/rest/upload/product/{folder}")
 	public List<JsonNode> upload(@PathVariable("folder") String folder, @PathParam("files") MultipartFile[] files) {
 		List<JsonNode> listJson = new ArrayList<JsonNode>();
 		List<File> listFile = uService.save(files, folder);
-		for(File saveFile : listFile) {
+		for (File saveFile : listFile) {
 			ObjectMapper mapper = new ObjectMapper();
 			ObjectNode node = mapper.createObjectNode();
 			node.put("filename", saveFile.getName());
@@ -56,6 +57,5 @@ public class UploadRestController {
 		System.out.println(listJson);
 		return listJson;
 	}
-	
-}
 
+}

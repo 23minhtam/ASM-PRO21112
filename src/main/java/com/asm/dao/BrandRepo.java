@@ -9,9 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import com.asm.bean.Brand;
 
-
 @Repository
-public interface BrandRepo extends JpaRepository<Brand, String>{
+public interface BrandRepo extends JpaRepository<Brand, String> {
 	@Query("SELECT b FROM Brand b WHERE b.name LIKE :name")
 	List<Brand> findByName(@Param("name") String name);
 
