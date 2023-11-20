@@ -69,6 +69,10 @@ public class OrderController {
 	public String cart() {
 		return "order/cart";
 	}
+	@RequestMapping("/wishlist")
+	public String wishlist() {
+		return "order/wishlist";
+	}
 	@RequestMapping("/checkout")
 	public String checkout(Model model) {
 		model.addAttribute("userDetail", session.get("user"));

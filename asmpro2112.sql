@@ -1,5 +1,7 @@
 ﻿create database asmpro2112
 GO
+use asmpro2112
+go
 /****** Object:  Table [dbo].[Accounts]    Script Date: 6/18/2023 7:11:55 PM ******/
 SET ANSI_NULLS ON
 GO
@@ -188,6 +190,7 @@ INSERT [dbo].[Accounts] ([username], [password], [fullname], [email], [photo], [
 INSERT [dbo].[Accounts] ([username], [password], [fullname], [email], [photo], [activated]) VALUES (N'minhtam', N'123', N'Võ Minh Tâm', N'minhtam@fpt.edu.vn', N'cat2.jpg', 1)
 INSERT [dbo].[Accounts] ([username], [password], [fullname], [email], [photo], [activated]) VALUES (N'hoanganh', N'123', N'Lê Xuân Hoàng ANh', N'hoanganh@gmail.com', N'dog.jpg', 1)
 INSERT [dbo].[Accounts] ([username], [password], [fullname], [email], [photo], [activated]) VALUES (N'admin', N'123', N'Admin', N'admin@gmail.com', N'admin.jpg', 1)
+INSERT [dbo].[Accounts] ([username], [password], [fullname], [email], [photo], [activated]) VALUES (N'phathung', N'123', N'Lê Nguyễn Phát Hưng', N'phathung8719@gmail.com', N'50851a34.jpg', 1)
 INSERT [dbo].[Brands] ([id], [name], [image]) VALUES (N'BA', N'Kim cương tự nhiên', N'kctn1.jpg')
 INSERT [dbo].[Brands] ([id], [name], [image]) VALUES (N'KE', N'Kim cương nhân tạo', N'kcnt1.jpg')
 INSERT [dbo].[Brands] ([id], [name], [image]) VALUES (N'BTC', N'Kim cương đã xử lý', N'kcdxl1.jpg')
@@ -234,14 +237,39 @@ INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [bran
 INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (4, N'Kim cương tự nhiên 005', 50000, CAST(N'2023-03-20' AS Date), 1, N'BA', N'["kctn5.webp","kctn5.webp"]')
 INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (5, N'Kim cương tự nhiên 006', 37000, CAST(N'2023-03-22' AS Date), 1, N'BA', N'["kctn6.jpg","kctn6.jpg"]')
 INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (6, N'Kim cương tự nhiên 007', 22000, CAST(N'2023-04-10' AS Date), 1, N'BA', N'["kctn7.webp","kctn7.webp"]')
-INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (7, N'Kim cương tự nhiên 008', 18000, CAST(N'2023-04-15' AS Date), 1, N'BA', N'["kctn8.jpg","kctn8.jpg"]')
-INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (8, N'Kim cương nhân tạo 001', 15000, CAST(N'2023-04-12' AS Date), 1, N'KE', N'["kcnt1.jpg","kcnt1.jpg"]')
-INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (9, N'Kim cương nhân tạo 002', 8000, CAST(N'2023-04-12' AS Date), 1, N'KE', N'["kcnt5.jpg","kcnt5.jpg"]')
-INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (10, N'Kim cương nhân tạo 003', 9000, CAST(N'2023-04-12' AS Date), 1, N'KE', N'["kcnt2.webp","kcnt2.webp"]')
-INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (11, N'Kim cương nhân tạo 004', 3500, CAST(N'2023-04-13' AS Date), 1, N'KE', N'["kcnt3.webp","kcnt3.webp"]')
-INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (12, N'Kim cương nhân tạo 005', 7000, CAST(N'2023-04-13' AS Date), 1, N'KE', N'["kcnt4.jpg","kcnt4.jpg"]')
-INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (13, N'Kim cương màu tự nhiên 001', 18000, CAST(N'2023-04-14' AS Date), 1, N'ETH', N'["kcmtn1.png","kcmtn1.png"]')
-INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (14, N'Kim cương màu tự nhiên 002', 4000, CAST(N'2023-03-15' AS Date), 1, N'ETH', N'["kcmtn2.jpg","kcmtn2.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (7, N'Kim cương tự nhiên 008', 28000, CAST(N'2023-04-15' AS Date), 1, N'BA', N'["kctn8.jpg","kctn8.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (8, N'Kim cương tự nhiên 009', 38000, CAST(N'2023-04-21' AS Date), 1, N'BA', N'["kctn9.jpeg","kctn9.jpeg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (9, N'Kim cương tự nhiên 0010', 18000, CAST(N'2023-04-15' AS Date), 1, N'BA', N'["kctn10.jpeg","kctn10.jpeg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (10, N'Kim cương nhân tạo 001', 15000, CAST(N'2023-04-12' AS Date), 1, N'KE', N'["kcnt1.jpg","kcnt1.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (11, N'Kim cương nhân tạo 002', 8000, CAST(N'2023-04-12' AS Date), 1, N'KE', N'["kcnt5.jpg","kcnt5.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (12, N'Kim cương nhân tạo 003', 9000, CAST(N'2023-04-12' AS Date), 1, N'KE', N'["kctn8.jpg","kctn8.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (13, N'Kim cương nhân tạo 004', 3500, CAST(N'2023-04-13' AS Date), 1, N'KE', N'["kcnt9.jpg","kcnt9.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (14, N'Kim cương nhân tạo 005', 7000, CAST(N'2023-04-13' AS Date), 1, N'KE', N'["kcnt4.jpg","kcnt4.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (15, N'Kim cương nhân tạo 006', 5400, CAST(N'2023-04-13' AS Date), 1, N'KE', N'["kcnt6.jpg","kcnt6.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (16, N'Kim cương nhân tạo 007', 7800, CAST(N'2023-04-13' AS Date), 1, N'KE', N'["kcnt7.jpg","kcnt7.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (17, N'Kim cương nhân tạo 008', 9700, CAST(N'2023-04-13' AS Date), 1, N'KE', N'["kctn8.jpg","kctn8.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (18, N'Kim cương nhân tạo 009', 3200, CAST(N'2023-04-13' AS Date), 1, N'KE', N'["kcnt9.jpg","kcnt9.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (19, N'Kim cương nhân tạo 0010', 4500, CAST(N'2023-04-13' AS Date), 1, N'KE', N'["kcnt6.jpg","kcnt6.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (20, N'Kim cương màu tự nhiên 001', 18000, CAST(N'2023-04-14' AS Date), 1, N'ETH', N'["kcmtn1.png","kcmtn1.png"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (21, N'Kim cương màu tự nhiên 002', 25000, CAST(N'2023-03-15' AS Date), 1, N'ETH', N'["kcmtn2.jpg","kcmtn2.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (22, N'Kim cương màu tự nhiên 003', 43000, CAST(N'2023-03-15' AS Date), 1, N'ETH', N'["kcmtn4.jpg","kcmtn4.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (23, N'Kim cương màu tự nhiên 004', 12000, CAST(N'2023-03-15' AS Date), 1, N'ETH', N'["kcmtn4.jpg","kcmtn4.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (24, N'Kim cương màu tự nhiên 005', 45000, CAST(N'2023-03-15' AS Date), 1, N'ETH', N'["kcmtn5.jpg","kcmtn5.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (25, N'Kim cương màu tự nhiên 006', 67000, CAST(N'2023-03-15' AS Date), 1, N'ETH', N'["kcmtn6.jpg","kcmtn6.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (26, N'Kim cương màu tự nhiên 007', 23000, CAST(N'2023-03-15' AS Date), 1, N'ETH', N'["kcmtn7.jpg","kcmtn7.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (27, N'Kim cương màu tự nhiên 008', 34000, CAST(N'2023-03-15' AS Date), 1, N'ETH', N'["kcmtn8.jpg","kcmtn8.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (28, N'Kim cương màu tự nhiên 009', 75000, CAST(N'2023-03-15' AS Date), 1, N'ETH', N'["kcmtn9.jpg","kcmtn9.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (29, N'Kim cương màu tự nhiên 0010', 23000, CAST(N'2023-03-15' AS Date), 1, N'ETH', N'["kcmtn7.jpg","kcmtn7.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (30, N'Kim cương đã xử lí 001', 235000, CAST(N'2023-10-10' AS Date), 1, N'BTC', N'["kcdxl1.jpg","kcdxl1.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (31, N'Kim cương đã xử lí 002', 643000, CAST(N'2023-10-10' AS Date), 1, N'BTC', N'["kcdxl2.jpg","kcdxl2.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (32, N'Kim cương đã xử lí 003', 543000, CAST(N'2023-10-10' AS Date), 1, N'BTC', N'["kcdxl3.jpg","kcdxl3.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (33, N'Kim cương đã xử lí 004', 154000, CAST(N'2023-10-10' AS Date), 1, N'BTC', N'["kcdxl4.jpg","kcdxl4.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (34, N'Kim cương đã xử lí 005', 156000, CAST(N'2023-10-10' AS Date), 1, N'BTC', N'["kcdxl5.jpg","kcdxl5.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (35, N'Kim cương đã xử lí 006', 124000, CAST(N'2023-10-10' AS Date), 1, N'BTC', N'["kcdxl6.jpg","kcdxl6.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (36, N'Kim cương đã xử lí 007', 543000, CAST(N'2023-10-10' AS Date), 1, N'BTC', N'["kcdxl7.jpg","kcdxl7.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (37, N'Kim cương đã xử lí 008', 123000, CAST(N'2023-10-10' AS Date), 1, N'BTC', N'["kcdxl8.png","kcdxl8.png"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (38, N'Kim cương đã xử lí 009', 321000, CAST(N'2023-10-10' AS Date), 1, N'BTC', N'["kcdxl9.jpg","kcdxl9.jpg"]')
+INSERT [dbo].[Products] ([id], [name], [price], [createDate], [available], [brandId], [images]) VALUES (39, N'Kim cương đã xử lí 0010', 567000, CAST(N'2023-10-10' AS Date), 1, N'BTC', N'["kcdxl10.jpg","kcdxl10.jpg"]')
 SET IDENTITY_INSERT [dbo].[Products] OFF
 SET IDENTITY_INSERT [dbo].[RoleDetails] ON 
 
@@ -249,6 +277,7 @@ INSERT [dbo].[RoleDetails] ([id], [accountId], [roleId]) VALUES (0, N'admin', N'
 INSERT [dbo].[RoleDetails] ([id], [accountId], [roleId]) VALUES (4, N'vantrinh', N'staff')
 INSERT [dbo].[RoleDetails] ([id], [accountId], [roleId]) VALUES (6, N'minhtam', N'user')
 INSERT [dbo].[RoleDetails] ([id], [accountId], [roleId]) VALUES (7, N'hoanganh', N'user')
+INSERT [dbo].[RoleDetails] ([id], [accountId], [roleId]) VALUES (2, N'phathung', N'user')
 SET IDENTITY_INSERT [dbo].[RoleDetails] OFF
 INSERT [dbo].[Roles] ([role], [description]) VALUES (N'director', N'director')
 INSERT [dbo].[Roles] ([role], [description]) VALUES (N'staff', N'staff')

@@ -59,6 +59,7 @@ public interface ProductService {
 	Page<Product> findProductByListCategory(List<String> cid, Optional<Integer> p);
 	
 	
+	
 //	Page<Product> findPageProduct(Optional<String> kw, Optional<String> cid, Optional<String> brandid, Optional<Integer> p);
 //	
 //	List<Map<String, Object>> findProductByKeywordAndPage(Optional<String> kw, Optional<String> cid, Optional<String> brandid, Optional<Integer> p);

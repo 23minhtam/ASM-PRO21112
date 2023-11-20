@@ -97,18 +97,17 @@ public class HomeController {
 			Account account = aService.findByUsername(username);
 			if(!account.getPassword().equals(password)) {
 				model.addAttribute("message", "Invalid password");
+				return "home/index";
 			}else {
 				String uri = session.get("security-uri");
-//				if(uri != null) {
-//					return "redirect:"+uri;
-//				}
-//				else {
 					session.set("user", account);
 					if(this.checkAdmin(account)) {
 						session.set("userAdmin", "admin");
 					}
 					model.addAttribute("message", "Login success");
+					return "home/index";
 //				}
+					
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

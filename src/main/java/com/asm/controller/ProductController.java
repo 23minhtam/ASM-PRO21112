@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.asm.bean.Category;
 import com.asm.bean.Product;
 import com.asm.bean.ProductCategory;
 import com.asm.service.BrandService;
@@ -97,8 +96,15 @@ public class ProductController {
 			model.addAttribute("page",lstProduct);
 			model.addAttribute("products", products);
 		}
+		else if(price.equalsIgnoreCase("over20000")) {
+			Page<Product> lstProduct = pService.findByPriceGreaterThanEqual(20000.0, p);
+			List<Map<String, Object>> products = pService.listProductSearch(lstProduct);
+			model.addAttribute("page",lstProduct);
+			model.addAttribute("products", products);
+		}
 		return "product/list";
 	}
+	
 	@RequestMapping("/detail/{id}")
 	public String detail(Model model,
 			@PathVariable("id") Long id) {
