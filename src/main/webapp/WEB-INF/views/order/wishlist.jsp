@@ -38,18 +38,26 @@
 				<div class="bredcrumbWrap">
 					<div class="container breadcrumbs" role="navigation"
 						aria-label="breadcrumbs">
-						<a href="/" title="Back to the home page">Home</a><span
-							aria-hidden="true">›</span><span>Wishlist</span>
+						<a href="/" title="Back to the home page"><s:message code="user.home"/></a><span
+							aria-hidden="true">›</span><span><s:message code="user.wishlist"/></span>
 					</div>
 				</div>
 				<!--End Breadcrumb-->
 		<!--Body Content-->
+<!-- #wishlist
+user.home = Trang chủ
+user.wishlist = Danh sách mong muốn
+user.sanphamyeuthich = Sản phẩm yêu thích
+user.sanpham = Sản phẩm
+user.tieptucmuasam= Tiếp tục mua sắm
+user.capnhat = Cập nhật
+user.freeship= Miễn phí vận chuyển đơn hàng từ 10000$ nội thành TPHCM, ngoại thành chịu phí ship sẽ được cập nhật ở bước thanh toán -->
 		<div id="page-content">
 			<!--Page Title-->
 			<div class="page section-header text-center mt-5">
 				<div class="page-title">
 					<div class="wrapper">
-						<h1 class="page-width">Sản phẩm yêu thích</h1>
+						<h1 class="page-width"><s:message code="user.sanphamyeuthich"/></h1>
 					</div>
 				</div>
 			</div>
@@ -62,7 +70,7 @@
 							<table>
 								<thead class="wishlist__row wishlist__header">
 									<tr>
-										<th colspan="2" class="text-center">Sản phẩm</th>
+										<th colspan="2" class="text-center"><s:message code="user.sanpham "/></th>
 										<th class="action">&nbsp;</th>
 									</tr>
 								</thead>
@@ -87,19 +95,19 @@
 									<tr>
 										<td colspan="3" class="text-left"><a href="/product/list"
 											class="btn--link wishlist-continue"><i
-												class="icon icon-arrow-circle-left"></i> Tiếp tục mua sắm</a></td>
-										<td colspan="3" class="text-right"><button
+												class="icon icon-arrow-circle-left"></i> <s:message code="user.tieptucmuasam"/></a></td>
+										<td colspan="3" class="text-right">
+										<button
 												ng-click="wishlist.clear()" type="submit" name="update"
 												class="btn--link wishlist-update">
-												<i class="fa fa-refresh"></i> Cập nhật
-											</button></td>
+												<i class="fa fa-refresh"></i><s:message code="user.capnhat"/>
+										</button>
+										</td>
 									</tr>
 								</tfoot>
 							</table>
 
-							<div class="currencymsg">Miễn phí vận chuyển đơn hàng từ
-								10000$ nội thành TPHCM, ngoại thành chịu phí ship sẽ được cập nhật
-								ở bước thanh toán</div>
+							<div class="currencymsg"><s:message code="user.capnhat"/>user.freeship</div>
 							<hr>
 
 

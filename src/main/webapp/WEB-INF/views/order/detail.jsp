@@ -39,19 +39,20 @@
 				<div class="bredcrumbWrap">
 					<div class="container breadcrumbs" role="navigation"
 						aria-label="breadcrumbs">
-						<a href="/" title="Back to the home page">Home</a><span
-							aria-hidden="true">›</span><span>Order detail</span>
+						<a href="/" title="Back to the home page"><s:message code="user.home"/></a><span
+							aria-hidden="true">›</span><span><s:message code="user.orderdetail"/></span>
 					</div>
 				</div>
 				<!--End Breadcrumb-->
 		<!--Body Content-->
 		<!--Body Content-->
+
 		<div id="page-content">
 			<!--Page Title-->
 			<div class="page section-header text-center mt-5">
 				<div class="page-title">
 					<div class="wrapper">
-						<h1 class="page-width">CHI TIẾT ĐƠN HÀNG</h1>
+						<h1 class="page-width"><s:message code="user.chitietdonhang"/></h1>
 					</div>
 				</div>
 			</div>
@@ -86,10 +87,10 @@
 						<div class="create-ac-content bg-light-gray padding-20px-all">
 							<form name="frmOrder">
 								<fieldset>
-									<h2 class="login-title mb-3">Chi tiết thanh toán</h2>
+									<h2 class="login-title mb-3"><s:message code="user.chitietthanhtoan"/></h2>
 									<div class="row">
 										<div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-											<label for="input-firstname">Username<span
+											<label for="input-firstname"><s:message code="user.Username"/><span
 												class="required-f">*</span></label> <input disabled="disabled"
 												name="username" value="${order.account.username}"
 												id="username" type="text">
@@ -97,7 +98,7 @@
 									</div>
 									<div class="row">
 										<div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-											<label for="input-firstname">Họ và tên<span
+											<label for="input-firstname"><s:message code="user.fullname"/><span
 												class="required-f">*</span></label> <input disabled="disabled"
 												name="fullname" value="${order.account.fullname}"
 												id="input-firstname" type="text">
@@ -116,7 +117,7 @@
 								<fieldset>
 									<div class="row">
 										<div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-											<label for="input-address-1">Địa chỉ <span
+											<label for="input-address-1"><s:message code="user.address "/><span
 												class="required-f">*</span></label> <input disabled="disabled"
 												name="address" value="${order.address}"
 												id="input-address-1" required type="text">
@@ -126,7 +127,7 @@
 								<fieldset>
 									<div class="row">
 										<div class="form-group col-md-12 col-lg-12 col-xl-12">
-											<label for="input-company">Ghi chú<span
+											<label for="input-company"><s:message code="user.note"/><span
 												class="required-f">*</span></label>
 											<textarea disabled="disabled"
 												class="form-control resize-both" rows="3"></textarea>
@@ -140,20 +141,35 @@
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
 						<div class="your-order-payment">
 							<div class="your-order">
-								<h2 class="order-title mb-4">Đơn hàng của bạn</h2>
+								<h2 class="order-title mb-4"><s:message code="user.donhangcuaban"/></h2>
 
 								<div class="table-responsive-sm order-table">
 									<table
 										class="bg-white table table-bordered table-hover text-center">
 										<thead>
 											<tr>
-												<th class="text-left">Sản phẩm</th>
-												<th>Giá</th>
-												<th>Số lượng</th>
-												<th>Tổng cộng</th>
+												<th class="text-left"><s:message code="user.sanpham"/></th>
+												<th><s:message code="user.gia"/></th>
+												<th><s:message code="user.soluong"/></th>
+												<th><s:message code="user.tongcong"/></th>
 											</tr>
 										</thead>
 										<tbody>
+										<!-- 		#deltail.jsp
+user.home = Trang chủ
+user.orderdetail = Chi tiết đơn hàng
+user.chitietdonhang= CHI TIẾT ĐƠN HÀNG
+user.chitietthanhtoan = Chi tiết thanh toán
+user.Username= Tên tài khoản
+user.fullname= Họ và tên
+user.address = Địa chỉ
+user.note = Ghi chú
+user.donhangcuaban= Đơn Hàng của bạn 
+user.sanpham= Sản Phẩm
+user.gia= Giá 
+user.soluong = Số Lượng  
+user.tongcong= Tổng Cộng 
+user.thanhtoan= Thanh Toán -->
 											<c:forEach var="o" items="${order.orderDetails}">
 												<tr>
 													<td class="text-left">${o.product.name}</td>
@@ -165,8 +181,7 @@
 										</tbody>
 										<tfoot class="font-weight-600">
 											<tr>
-												<td colspan="4" class="text-right font-weight-bold">Thanh
-													toán</td>
+												<td colspan="4" class="text-right font-weight-bold"><s:message code="user.thanhtoan"/></td>
 												<td class="font-weight-bold">${total} $</td>
 											</tr>
 										</tfoot>

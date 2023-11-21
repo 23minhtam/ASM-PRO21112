@@ -41,12 +41,12 @@
                                 </ul>
                                 <div class="total">
                                     <div class="total-in">
-                                        <span class="label">TỔNG TIỀN:</span><span class="product-price"><span
+                                        <span class="label"><s:message code="user.tongtien"/></span><span class="product-price"><span
                                                 class="money">{{cart.amount | number:0}}$</span></span>
                                     </div>
                                     <div class="buttonSet text-center">
-                                        <a href="/order/cart" class="btn btn-secondary btn--small">XEM GIỎ HÀNG</a>
-                                        <a href="/order/checkout" class="btn btn-secondary btn--small">THANH TOÁN</a>
+                                        <a href="/order/cart" class="btn btn-secondary btn--small"><s:message code="user.xemgiohang"/> </a>
+                                        <a href="/order/checkout" class="btn btn-secondary btn--small"><s:message code="user.thanhtoan"/></a>
                                     </div>
                                 </div>
                             </div>

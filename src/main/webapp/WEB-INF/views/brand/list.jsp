@@ -47,7 +47,7 @@
 							src="/assets/images/banner.jpeg"  />
 					</div>
 					<div class="collection-hero__title-wrapper">
-						<h1 class="collection-hero__title page-width">LIST BRAND</h1>
+						<h1 class="collection-hero__title page-width"><s:message code="user.listbrand"/></h1>
 					</div>
 				</div>
 			</div>

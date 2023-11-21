@@ -137,7 +137,7 @@
 					<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="section-header text-center">
 							<a href="/product/list?kw=" class="btn"
-								style="vertical-align: middle; text-align: center;">All Product</a>
+								style="vertical-align: middle; text-align: center;"><s:message code="user.allproduct"/></a>
 						</div>
 					</div>
 				</div>
@@ -154,20 +154,17 @@
 									class="icon anm anm-truck-l"></i>
 									<h5>
 										<s:message code="user.mienphivanchuyen" />
-									</h5> <span class="sub-text"> <s:message
-											code="user.mmienphivanchuyen" /></span></li>
+									</h5> <span class="sub-text"> <s:message code="user.mmienphivanchuyen" /></span></li>
 								<li class="display-table-cell"><i
 									class="icon anm anm-money-bill-ar"></i>
 									<h5>
 										<s:message code="user.khuyenmaihapdan" />
-									</h5> <span class="sub-text"> <s:message
-											code="user.mkhuyenmaihapdan" /></span></li>
+									</h5> <span class="sub-text"> <s:message code="user.mkhuyenmaihapdan" /></span></li>
 								<li class="display-table-cell"><i
 									class="icon anm anm-comments-l"></i>
 									<h5>
 										<s:message code="user.sanphamchinhhang" />
-									</h5> <span class="sub-text"> <s:message
-											code="user.msanphamchinhhang" />
+									</h5> <span class="sub-text"> <s:message code="user.msanphamchinhhang" />
 								</span></li>
 							</ul>
 						</div>

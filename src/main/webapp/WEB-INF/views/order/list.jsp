@@ -38,10 +38,11 @@
 				<div class="bredcrumbWrap">
 					<div class="container breadcrumbs" role="navigation"
 						aria-label="breadcrumbs">
-						<a href="/" title="Back to the home page">Home</a><span
-							aria-hidden="true">›</span><span>Order List</span>
+						<a href="/" title="Back to the home page"><s:message code="user.home "/></a><span
+							aria-hidden="true">›</span><span><s:message code="user.orderlist "/></span>
 					</div>
 				</div>
+			
 				<!--End Breadcrumb-->
 		<!--Body Content-->
 		<!--Body Content-->
@@ -50,7 +51,7 @@
 			<div class="page section-header text-center mt-5">
 				<div class="page-title">
 					<div class="wrapper">
-						<h1 class="page-width">My order</h1>
+						<h1 class="page-width"><s:message code="user.myorder"/></h1>
 					</div>
 				</div>
 			</div>
@@ -64,14 +65,21 @@
 								<table class="table table-bordered">
 									<thead>
 										<tr>
-											<th class="product-name text-center alt-font">Mã đơn
-												hàng</th>
-											<th class="product-name alt-font">Ngày mua</th>
-											<th class="product-price text-center alt-font">Tổng tiền</th>
+											<th class="product-name text-center alt-font"><s:message code="user.madonhang"/></th>
+											<th class="product-name alt-font"><s:message code="user.ngaymua"/></th>
+											<th class="product-price text-center alt-font"><s:message code="user.tongtien"/></th>
 											<th class="product-subtotal text-center alt-font"></th>
 										</tr>
 									</thead>
 									<tbody>
+									<!-- 	#list.jsp
+user.home = Trang chủ
+user.orderlist = Danh sách hoá đơn
+user.myorder = Đơn hàng của tôi
+user.madonhang = Mã đơn hàng 
+user.ngaymua = Ngày Mua
+user.tongtien = Tổng Tiền 
+user.chitiet = Chi tiết -->
 										<c:forEach var="o" items="${orders }">
 												<tr>
 													<td class="product-name"><h4 class="no-margin">
@@ -84,7 +92,7 @@
 														class="amount">${o.total} $</span></td>
 													<td class="product-subtotal text-center"><a
 														href="/order/detail/${o.order.id}"
-														class="btn btn-small text-white">Xem chi tiết</a></td>
+														class="btn btn-small text-white"><s:message code="user.chitiet "/></a></td>
 												</tr>
 										</c:forEach>
 									</tbody>

@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                                <h4 class="h4">Informations</h4>
+                                <h4 class="h4">Thông Tin</h4>
                                 <ul>
                                     <li><a href="#"> <s:message code="user.aboutus"/></a></li>
                                     <li><a href="#"> <s:message code="user.careers"/></a></li>
