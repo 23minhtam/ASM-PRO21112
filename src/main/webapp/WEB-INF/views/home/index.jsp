@@ -1,7 +1,5 @@
-
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ page pageEncoding="utf-8"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 
 <!DOCTYPE html>
 <html>
@@ -32,14 +30,14 @@
 
 <body ng-app="shopping-app" ng-controller="shopping-ctrl"
 	class="template-index belle home5-cosmetic">
-	
+
 	<div class="pageWrapper">
 		<%@include file="../layout/_header.jsp"%>
 
 		<!--Body Content-->
 		<div id="page-content">
 			<!--Home slider-->
-			
+
 			<!--End Home slider-->
 
 			<!--Collection Tab slider-->
@@ -47,7 +45,7 @@
 			<!--Collection Tab slider-->
 
 			<!--Logo Slider-->
-			
+
 			<!--End Logo Slider-->
 
 			<!--Featured Product-->
@@ -56,7 +54,9 @@
 					<div class="row m-5">
 						<div class="col-12 col-sm-12 col-md-12 col-lg-12 ">
 							<div class="section-header text-center">
-								<h2 class="h2"> <s:message code="user.home"/> </h2>
+								<h2 class="h2">
+									<s:message code="user.home" />
+								</h2>
 							</div>
 						</div>
 					</div>
@@ -106,16 +106,21 @@
 														<i class="icon anm anm-bag-l"></i>
 													</button>
 												</form>
-												<div class="wishlist-btn">
-													<a class="wishlist add-to-wishlist" href="wishlist.html">
+												<c:if test="${not empty sessionScope.user }">
+												<form class="variants add" action="#" method="post">
+													<button  
+														ng-click="wishlist.add(${d.product.id})"
+														class="btn cartIcon btn-addto-cart" type="button"
+														tabindex="0">
 														<i class="icon anm anm-heart-l"></i>
-													</a>
-												</div>
+													</button>
+												</form>
+												</c:if>
 											</div>
 											<!-- end product button -->
 										</div>
 										<!-- Variant -->
-										
+
 										<!-- End Variant -->
 										<!-- End product details -->
 									</div>
@@ -143,14 +148,23 @@
 							<ul class="display-table store-info">
 								<li class="display-table-cell"><i
 									class="icon anm anm-truck-l"></i>
-									<h5> <s:message code="user.mienphivanchuyen"/></h5> <span class="sub-text"> <s:message code="user.mmienphivanchuyen"/></span></li>
+									<h5>
+										<s:message code="user.mienphivanchuyen" />
+									</h5> <span class="sub-text"> <s:message
+											code="user.mmienphivanchuyen" /></span></li>
 								<li class="display-table-cell"><i
 									class="icon anm anm-money-bill-ar"></i>
-									<h5><s:message code="user.khuyenmaihapdan"/></h5> <span class="sub-text">
-										<s:message code="user.mkhuyenmaihapdan"/></span></li>
+									<h5>
+										<s:message code="user.khuyenmaihapdan" />
+									</h5> <span class="sub-text"> <s:message
+											code="user.mkhuyenmaihapdan" /></span></li>
 								<li class="display-table-cell"><i
 									class="icon anm anm-comments-l"></i>
-									<h5><s:message code="user.sanphamchinhhang"/></h5> <span class="sub-text"> <s:message code="user.msanphamchinhhang"/> </span></li>
+									<h5>
+										<s:message code="user.sanphamchinhhang" />
+									</h5> <span class="sub-text"> <s:message
+											code="user.msanphamchinhhang" />
+								</span></li>
 							</ul>
 						</div>
 					</div>
@@ -182,18 +196,6 @@
 		<!-- Shopping cart -->
 		<script src="/assets/js/shopping-cart.js"></script>
 		<!--For Newsletter Popup-->
-		<script>
-			jQuery(document).mouseup(
-					function(e) {
-						var container = jQuery('#popup-container');
-						if (!container.is(e.target)
-								&& container.has(e.target).length === 0) {
-							container.fadeOut();
-							jQuery('#modalOverly').fadeIn(200);
-							jQuery('#modalOverly').hide();
-						}
-					});
-		</script>
 		<!--End For Newsletter Popup-->
 	</div>
 </body>
