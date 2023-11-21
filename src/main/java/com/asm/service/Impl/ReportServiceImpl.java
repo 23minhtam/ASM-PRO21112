@@ -12,14 +12,18 @@ import com.asm.report.ReportProduct;
 import com.asm.service.ReportService;
 
 @Service
-public class ReportServiceImpl implements ReportService{
-	@Autowired ReportCostRepo rpcRepo;
-	@Autowired ReportProductRepo rprRepo;
+public class ReportServiceImpl implements ReportService {
+	@Autowired
+	ReportCostRepo rpcRepo;
+	@Autowired
+	ReportProductRepo rprRepo;
+
 	@Override
 	public List<ReportCost> reportCostInMonth(Integer month) {
 		List<ReportCost> lst = rpcRepo.reportCost(month);
 		return lst;
 	}
+
 	@Override
 	public List<ReportProduct> reportProductInMonth(Integer month) {
 		List<ReportProduct> lst = rprRepo.reportProduct(month);

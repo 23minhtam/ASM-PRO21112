@@ -10,11 +10,11 @@ import com.asm.bean.RoleDetail;
 public interface AccountService {
 
 	List<Account> findAll();
-	
+
 	Account findByUsername(String username);
-	
+
 	Account save(Account account);
-	
+
 	void deleteByUsername(String username);
 
 	boolean existsById(String username);
@@ -32,6 +32,5 @@ public interface AccountService {
 	List<Account> findByUsernameLike(String username);
 
 	Long countCustomer(String role);
-	
 
 }

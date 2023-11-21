@@ -12,9 +12,11 @@ import com.asm.service.BrandService;
 import com.asm.service.CategoryService;
 
 @Component
-public class GlobalInterceptor implements HandlerInterceptor{
-	@Autowired CategoryService cService;
-	@Autowired BrandService bService;
+public class GlobalInterceptor implements HandlerInterceptor {
+	@Autowired
+	CategoryService cService;
+	@Autowired
+	BrandService bService;
 
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
@@ -22,6 +24,5 @@ public class GlobalInterceptor implements HandlerInterceptor{
 		request.setAttribute("cates", cService.findAll());
 		request.setAttribute("brands", bService.findAll());
 	}
-	
-	
+
 }

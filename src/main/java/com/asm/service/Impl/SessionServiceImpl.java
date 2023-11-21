@@ -8,8 +8,9 @@ import org.springframework.stereotype.Service;
 import com.asm.service.SessionService;
 
 @Service
-public class SessionServiceImpl implements SessionService{
-	@Autowired HttpSession session;
+public class SessionServiceImpl implements SessionService {
+	@Autowired
+	HttpSession session;
 
 	@Override
 	public <T> T get(String name) {
@@ -22,6 +23,7 @@ public class SessionServiceImpl implements SessionService{
 		T value = this.get(name);
 		return value != null ? value : defaultValue;
 	}
+
 	@Override
 	public void set(String name, Object value) {
 		// TODO Auto-generated method stub

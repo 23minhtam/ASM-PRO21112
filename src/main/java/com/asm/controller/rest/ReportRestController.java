@@ -25,26 +25,29 @@ import com.asm.service.ReportService;
 @CrossOrigin("*")
 @RequestMapping("/admin/rest/report")
 public class ReportRestController {
-	@Autowired AccountService aService;
-	@Autowired OrderService oService;
-	@Autowired ReportService rpService;
-	
+	@Autowired
+	AccountService aService;
+	@Autowired
+	OrderService oService;
+	@Autowired
+	ReportService rpService;
+
 	public Integer monthCurrent() {
 		Date date = new Date();
-		return date.getMonth()+1;
+		return date.getMonth() + 1;
 	}
-	
+
 	@GetMapping("/total")
 	public Map<String, Object> total() {
 		Integer month = this.monthCurrent();
 		Map<String, Object> db = new HashMap<String, Object>();
 		db.put("totalCustomer", aService.countCustomer("user"));
-		
+
 		List<Order> orders = oService.findOrderInMonth(month);
 		Double totalCost = 0.0;
-		for(Order order : orders ) {
+		for (Order order : orders) {
 			List<OrderDetail> orderDetail = order.getOrderDetails();
-			for(OrderDetail od : orderDetail) {
+			for (OrderDetail od : orderDetail) {
 				totalCost += od.getPrice() * od.getQuantity();
 			}
 		}
@@ -52,13 +55,15 @@ public class ReportRestController {
 		db.put("totalOrder", oService.countOrderInMonth(month));
 		return db;
 	}
+
 	@GetMapping("/reportcost")
-	public List<ReportCost> reportCostInMonth(){
+	public List<ReportCost> reportCostInMonth() {
 		List<ReportCost> lst = rpService.reportCostInMonth(this.monthCurrent());
 		return lst;
 	}
+
 	@GetMapping("/bestSellerInMonth")
-	public List<ReportProduct> reportProductInMonth(){
+	public List<ReportProduct> reportProductInMonth() {
 		List<ReportProduct> lst = rpService.reportProductInMonth(this.monthCurrent());
 		return lst;
 	}

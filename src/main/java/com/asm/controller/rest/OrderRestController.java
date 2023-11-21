@@ -13,7 +13,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 @CrossOrigin("*")
 @RestController
 public class OrderRestController {
-	@Autowired OrderService oService;
+	@Autowired
+	OrderService oService;
+
 	@PostMapping("/rest/order")
 	public Order create(@RequestBody JsonNode order) {
 		return oService.create(order);

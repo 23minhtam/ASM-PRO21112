@@ -10,8 +10,9 @@
 					<i class="icon anm anm-search-l"></i>
 				</button>
 				<input class="search__input" type="search" name="kw"
-					value="${sessionScope.keywords}" placeholder="Search entire store..."
-					aria-label="Search" autocomplete="off">
+					value="${sessionScope.keywords}"
+					placeholder="Search entire store..." aria-label="Search"
+					autocomplete="off">
 			</form>
 			<button type="button" class="search-trigger close-btn">
 				<i class="anm anm-times-l"></i>
@@ -25,8 +26,10 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="language-dropdown">
-						<a class="language-dd" href="?lang=us">English</a>
-						<a class="language-dd" href="?lang=vi">Việt Nam</a>
+
+						<a class="language-dd" href="?lang=us">English</a> <a
+							class="language-dd" href="?lang=vi">Việt Nam</a>
+
 					</div>
 					<p class="phone-no">
 						<i class="anm anm-phone-s"></i> +8999999999
@@ -39,19 +42,23 @@
 						class="anm anm-user-al" aria-hidden="true"></i></span>
 					<ul class="customer-links list-inline">
 						<c:if test="${not empty sessionScope.user }">
-	                        	<li><a  class="fw-bold" href="#"> ${sessionScope.user.username }</a></li>
-	                        	<li><a href="/logout">Đăng xuất</a></li>
-	                        	<li><a href="/order/list">Đơn hàng</a></li>
-	                            <li><a href="#">Sản phẩm yêu thích</a></li>
-	                    </c:if>
-	                    <c:if test="${empty sessionScope.user }">
-	                            <li><a href="/login"><s:message code="user.login"/></a></li>
-	                            <li><a href="/register"><s:message code="user.taotaikhoan"/></a></li>
-	                    </c:if>
-	                    <c:if test="${not empty sessionScope.userAdmin}">
-		                    <li><a href="/admin">Admin</a></li>
-	                    </c:if>
-	                  </ul>
+
+							<li><a class="fw-bold" href="#">
+									${sessionScope.user.username }</a></li>
+							<li><a href="/logout">Đăng xuất</a></li>
+							<li><a href="/order/list">Đơn hàng</a></li>
+							<li><a href="/order/wishlist">Sản phẩm yêu thích</a></li>
+						</c:if>
+						<c:if test="${empty sessionScope.user }">
+							<li><a href="/login"><s:message code="user.login" /></a></li>
+							<li><a href="/register"><s:message
+										code="user.taotaikhoan" /></a></li>
+						</c:if>
+						<c:if test="${not empty sessionScope.userAdmin}">
+							<li><a href="/admin">Admin</a></li>
+						</c:if>
+					</ul>
+
 				</div>
 			</div>
 		</div>
@@ -63,9 +70,11 @@
 			<div class="row align-items-center">
 				<!--Desktop Logo-->
 				<div class="logo col-md-2 col-lg-2 d-none d-lg-block">
-					<a style="text-decoration: none;" href="/"><h1 style="font-size:20px; font-weight: 600; color: rgb(39, 39, 39);	">Kim Cương TxT</h1> </a>
+					<a style="text-decoration: none;" href="/"><h1
+							style="font-size: 20px; font-weight: 600; color: rgb(39, 39, 39);">Kim
+							Cương TxT</h1> </a>
 
-					
+
 				</div>
 				<!--End Desktop Logo-->
 				<div class="col-2 col-sm-3 col-md-3 col-lg-8">
@@ -79,14 +88,20 @@
 					<nav class="grid__item" id="AccessibleNav">
 						<!-- for mobile -->
 						<ul id="siteNav" class="site-nav medium right hidearrow">
-							<li class="lvl1 parent megamenu"><a href="/"><s:message code="user.trangchu"/> <i
-									class="anm anm-angle-down-l"></i></a></li>
-							<li class="lvl1 parent megamenu"><a href="/product/list?kw="><s:message code="navbar.sanpham"/> <i class="anm anm-angle-down-l"></i>
+
+							<li class="lvl1 parent megamenu"><a href="/"><s:message
+										code="user.trangchu" /> <i class="anm anm-angle-down-l"></i></a></li>
+							<li class="lvl1 parent megamenu"><a href=""><s:message
+										code="navbar.sanpham" /> <i class="anm anm-angle-down-l"></i>
+
 							</a>
 								<div class="megamenu style4">
 									<ul class="grid grid--uniform mmWrapper">
 										<li class="grid__item lvl-1 col-md-3 col-lg-3"><a
-											href="#" class="site-nav lvl-1"><s:message code="navbar.danhmucsanpham"/></a>
+
+											href="/product/list?kw=" class="site-nav lvl-1"><s:message
+													code="navbar.danhmucsanpham" /></a>
+
 											<ul class="subLinks">
 												<c:forEach var="item" items="${cates}" end="4">
 													<li class="lvl-2"><a
@@ -107,11 +122,14 @@
 											</ul></li>
 									</ul>
 								</div></li>
-							<li class="lvl1 parent megamenu"><a href="#"> <s:message code="user.thuonghieu"/> <i class="anm anm-angle-down-l"></i>
+
+							<li class="lvl1 parent megamenu"><a href="#"> <s:message
+										code="user.thuonghieu" /> <i class="anm anm-angle-down-l"></i>
 							</a>
-								
-							<li class="lvl1"><a href="#"><b> <s:message code="navbar.muangay"/> </b> <i
-									class="anm anm-angle-down-l"></i></a></li>
+							<li class="lvl1"><a href="#"><b> <s:message
+											code="navbar.muangay" />
+								</b> <i class="anm anm-angle-down-l"></i></a></li>
+
 						</ul>
 					</nav>
 					<!--End Desktop Menu-->
@@ -120,7 +138,7 @@
 				<div
 					class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
 					<div class="logo">
-						<a href="index.html"> <img src="/assets/images/Shopicon1.svg"
+						<a> <img src="/assets/images/Shopicon1.svg"
 							alt="Belle Multipurpose Html Template"
 							title="Belle Multipurpose Html Template" />
 						</a>

@@ -47,47 +47,49 @@ public class BrandRestController {
 			return ResponseEntity.ok(bService.findById(id));
 		}
 	}
+
 	@GetMapping("/search")
-	public List<Brand> searchBrand(@RequestParam("kw") Optional<String> kw){
-		String keyword = kw.orElse(null);		
-		if(keyword != null) {
-			return bService.findByName("%"+keyword+"%");
-		}else {
+	public List<Brand> searchBrand(@RequestParam("kw") Optional<String> kw) {
+		String keyword = kw.orElse(null);
+		if (keyword != null) {
+			return bService.findByName("%" + keyword + "%");
+		} else {
 			return this.getAllBrand();
 		}
 	}
+
 	@PostMapping("")
-	public ResponseEntity<Brand> postBrand(@RequestBody Brand brand){
-		if(bService.existsById(brand.getId())) {
+	public ResponseEntity<Brand> postBrand(@RequestBody Brand brand) {
+		if (bService.existsById(brand.getId())) {
 			return ResponseEntity.badRequest().build();
-		}else {
+		} else {
 			return ResponseEntity.ok(bService.save(brand));
 		}
 	}
-	
+
 	@PutMapping("/{id}")
-	public ResponseEntity<Brand> putBrand(@PathVariable("id") String id, @RequestBody Brand brand){
-		if(!bService.existsById(id)) {
+	public ResponseEntity<Brand> putBrand(@PathVariable("id") String id, @RequestBody Brand brand) {
+		if (!bService.existsById(id)) {
 			return ResponseEntity.notFound().build();
-		}else {
+		} else {
 			return ResponseEntity.ok(bService.save(brand));
 		}
 	}
+
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> deleteBrand(@PathVariable("id") String id){
-		if(!bService.existsById(id)) {
+	public ResponseEntity<Void> deleteBrand(@PathVariable("id") String id) {
+		if (!bService.existsById(id)) {
 			return ResponseEntity.notFound().build();
-		}else {
+		} else {
 			Brand brand = bService.findById(id);
 			String filename = brand.getImage();
 			System.out.println(filename);
-			if(!filename.equalsIgnoreCase("logo.jpg")) {
+			if (!filename.equalsIgnoreCase("logo.jpg")) {
 				uService.delete("brand", filename);
 			}
 			bService.deleteById(id);
 			return ResponseEntity.ok().build();
 		}
 	}
-	
-}
 
+}

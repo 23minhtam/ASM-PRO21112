@@ -5,8 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.asm.bean.RoleDetail;
 
-
 @Repository
-public interface RoleDetailRepo extends JpaRepository<RoleDetail, Long>{
+public interface RoleDetailRepo extends JpaRepository<RoleDetail, Long> {
 
 }

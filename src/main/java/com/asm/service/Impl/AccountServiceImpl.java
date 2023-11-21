@@ -14,10 +14,13 @@ import com.asm.dao.RoleRepo;
 import com.asm.service.AccountService;
 
 @Service
-public class AccountServiceImpl implements AccountService{
-	@Autowired AccountRepo aRepo;
-	@Autowired RoleRepo rRepo;
-	@Autowired RoleDetailRepo rdRepo;
+public class AccountServiceImpl implements AccountService {
+	@Autowired
+	AccountRepo aRepo;
+	@Autowired
+	RoleRepo rRepo;
+	@Autowired
+	RoleDetailRepo rdRepo;
 
 	@Override
 	public List<Account> findAll() {
@@ -78,5 +81,5 @@ public class AccountServiceImpl implements AccountService{
 	public Long countCustomer(String role) {
 		return aRepo.countCustomer(role);
 	}
-	
+
 }

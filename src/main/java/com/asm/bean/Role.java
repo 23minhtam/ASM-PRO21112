@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "Roles")
-public class Role implements Serializable{
+public class Role implements Serializable {
 	@Id
 	private String role;
 	private String description;

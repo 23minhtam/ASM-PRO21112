@@ -10,7 +10,7 @@ import com.asm.dao.CategoryRepo;
 import com.asm.service.CategoryService;
 
 @Service
-public class CategoryServiceImpl implements CategoryService{
+public class CategoryServiceImpl implements CategoryService {
 	@Autowired
 	CategoryRepo cRepo;
 

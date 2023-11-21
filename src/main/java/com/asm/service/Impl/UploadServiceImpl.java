@@ -16,17 +16,18 @@ import org.springframework.web.multipart.MultipartFile;
 import com.asm.service.UploadService;
 
 @Service
-public class UploadServiceImpl implements UploadService{
-	@Autowired ServletContext app;
-	
+public class UploadServiceImpl implements UploadService {
+	@Autowired
+	ServletContext app;
+
 	private Path getPath(String folder, String filename) {
 		File dir = Paths.get(app.getRealPath("/images"), folder).toFile();
-		if(!dir.exists()) {
+		if (!dir.exists()) {
 			dir.mkdirs();
 		}
 		return Paths.get(dir.getAbsolutePath(), filename);
 	}
-	
+
 	@Override
 	public File save(MultipartFile file, String folder) {
 		String s = System.currentTimeMillis() + file.getOriginalFilename();
@@ -37,7 +38,7 @@ public class UploadServiceImpl implements UploadService{
 			System.out.println(path);
 			return path.toFile();
 		} catch (Exception e) {
-			 throw new RuntimeException(e);
+			throw new RuntimeException(e);
 		}
 	}
 
@@ -50,7 +51,7 @@ public class UploadServiceImpl implements UploadService{
 	@Override
 	public List<File> save(MultipartFile[] files, String folder) {
 		List<File> listFile = new ArrayList<File>();
-		for(MultipartFile file : files) {
+		for (MultipartFile file : files) {
 			String s = System.currentTimeMillis() + file.getOriginalFilename();
 			String filename = Integer.toHexString(s.hashCode()) + s.substring(s.lastIndexOf("."));
 			Path path = this.getPath(folder, filename);
@@ -59,7 +60,7 @@ public class UploadServiceImpl implements UploadService{
 				listFile.add(path.toFile());
 				System.out.println(path);
 			} catch (Exception e) {
-				 throw new RuntimeException(e);
+				throw new RuntimeException(e);
 			}
 		}
 		return listFile;

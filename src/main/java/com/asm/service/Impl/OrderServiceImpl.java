@@ -19,20 +19,22 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
-public class OrderServiceImpl implements OrderService{
-	@Autowired OrderRepo oRepo;
-	@Autowired OrderDetailRepo odRepo;
+public class OrderServiceImpl implements OrderService {
+	@Autowired
+	OrderRepo oRepo;
+	@Autowired
+	OrderDetailRepo odRepo;
 
 	@Override
 	public Order create(JsonNode orderData) {
 		ObjectMapper mapper = new ObjectMapper();
 		Order order = mapper.convertValue(orderData, Order.class);
 		oRepo.save(order);
-		
+
 		TypeReference<List<OrderDetail>> type = new TypeReference<List<OrderDetail>>() {
 		};
-		List<OrderDetail> details = mapper.convertValue(orderData.get("orderDetails"),type)
-				.stream().peek(d -> d.setOrder(order)).collect(Collectors.toList());
+		List<OrderDetail> details = mapper.convertValue(orderData.get("orderDetails"), type).stream()
+				.peek(d -> d.setOrder(order)).collect(Collectors.toList());
 		odRepo.saveAll(details);
 		return order;
 	}
@@ -48,7 +50,7 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public List<Order> findOrderInMonth(Integer month){
+	public List<Order> findOrderInMonth(Integer month) {
 		return oRepo.findOrderInMonth(month);
 	}
 
@@ -57,5 +59,4 @@ public class OrderServiceImpl implements OrderService{
 		return oRepo.countOrderInMonth(month);
 	}
 
-	
 }

@@ -28,7 +28,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "Products")
-public class Product implements Serializable{
+public class Product implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -48,5 +48,5 @@ public class Product implements Serializable{
 	@JsonIgnore
 	@OneToMany(mappedBy = "product")
 	List<ProductCategory> productCategories;
-	
+
 }
