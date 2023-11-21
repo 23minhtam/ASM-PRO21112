@@ -46,7 +46,7 @@
 				<div class="bredcrumbWrap">
 					<div class="container breadcrumbs" role="navigation"
 						aria-label="breadcrumbs">
-						<a href="/" title="Back to the home page">user.home</a><span
+						<a href="/" title="Back to the home page">Home</a><span
 							aria-hidden="true">›</span><span>${product.product.name}</span>
 					</div>
 				</div>
@@ -135,29 +135,30 @@
 												</button>
 											</div>
 										</div>
+										
 										<!-- End Product Action -->
 									</form>
 									<div class="display-table shareRow">
 										<div class="display-table-cell medium-up--one-third">
 											<div class="wishlist-btn">
-												<a class="wishlist add-to-wishlist" href="#"
+												<a class="wishlist add-to-wishlist" ng-click="wishlist.add(${product.product.id})"
 													title="Add to Wishlist"><i class="icon anm anm-heart-l"
-													aria-hidden="true"></i> <span>Thêm Vào Yêu Thích</span></a>
+													aria-hidden="true"></i><span> Thêm Vào Yêu Thích</span> </a>
 											</div>
 										</div>
 										<div class="display-table-cell text-right">
 											<div class="social-sharing">
-												<a target="_blank" href="#"
+												<a target="_blank" href="https://www.facebook.com/laodai2k"
 													class="btn btn--small btn--secondary btn--share share-facebook"
 													title="Share on Facebook"> <i
 													class="fa fa-facebook-square" aria-hidden="true"></i> <span
 													class="share-title" aria-hidden="true">Facebook</span>
-												</a> <a target="_blank" href="#"
+												</a> <a target="_blank" href="https://www.facebook.com/laodai2k"
 													class="btn btn--small btn--secondary btn--share share-twitter"
 													title="Tweet on Twitter"> <i class="fa fa-twitter"
 													aria-hidden="true"></i> <span class="share-title"
 													aria-hidden="true">Tweet</span>
-												</a> <a href="#"
+												</a> <a href="https://www.facebook.com/laodai2k"
 													class="btn btn--small btn--secondary btn--share share-pinterest"
 													title="Share by Email" target="_blank"> <i
 													class="fa fa-envelope" aria-hidden="true"></i> <span
@@ -167,12 +168,13 @@
 										</div>
 									</div>
 								</div>
+								<br>
 								<div class="product-info">
 									<p class="product-type">
 										<span class="lbl">Loại hàng:</span>
 										<c:forEach var="c" items="${product.product.productCategories}">
 											<a href="/product/list?cid=${c.category.id}"
-												title="Women's">${c.category.name}</a>
+												>${c.category.name}</a>
 									</p>
 									</c:forEach>
 

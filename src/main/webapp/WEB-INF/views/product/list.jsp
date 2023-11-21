@@ -35,9 +35,11 @@
 	</div>
 	<div class="pageWrapper">
 		<%@include file="../layout/_header.jsp"%>
-
+		
 		<!--Body Content-->
+		
 		<div id="page-content">
+		
 			<!--Collection Banner-->
 			<div class="collection-header">
 				<div class="collection-hero">
@@ -48,7 +50,15 @@
 				</div>
 			</div>
 			<!--End Collection Banner-->
-
+			<!--Breadcrumb-->
+				<div class="bredcrumbWrap">
+					<div class="container breadcrumbs" role="navigation"
+						aria-label="breadcrumbs">
+						<a href="/" title="Back to the home page">Home</a><span
+							aria-hidden="true">›</span><span>List Product</span>
+					</div>
+				</div>
+				<!--End Breadcrumb-->
 			<div class="container mt-5">
 				<div class="row">
 					<!--Sidebar-->
@@ -169,10 +179,12 @@
 												<!-- end product image -->
 
 												<!-- Start product button -->
-												<form class="variants add">
+												<form class="variants add" action="#" method="post">
 													<button ng-click="cart.add(${p.product.id})"
-														class="btn btn-addto-cart" type="button">Add To
-														Cart</button>
+														class="btn cartIcon btn-addto-cart" type="button"
+														tabindex="0">Add to cart
+													
+													</button>
 												</form>
 												<c:if test="${not empty sessionScope.user }">
 													<div class="button-set variants add">

@@ -34,19 +34,27 @@
 	</div>
 	<div class="pageWrapper">
 		<%@include file="../layout/_header.jsp"%>
-
+		<!--Breadcrumb-->
+				<div class="bredcrumbWrap">
+					<div class="container breadcrumbs" role="navigation"
+						aria-label="breadcrumbs">
+						<a href="/" title="Back to the home page">Home</a><span
+							aria-hidden="true">›</span><span>Wishlist</span>
+					</div>
+				</div>
+				<!--End Breadcrumb-->
 		<!--Body Content-->
 		<div id="page-content">
 			<!--Page Title-->
 			<div class="page section-header text-center mt-5">
 				<div class="page-title">
 					<div class="wrapper">
-						<h1 class="page-width">SPYT</h1>
+						<h1 class="page-width">Sản phẩm yêu thích</h1>
 					</div>
 				</div>
 			</div>
 			<!--End Page Title-->
-
+			
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-sm-12 col-md-8 col-lg-8 main-col">
