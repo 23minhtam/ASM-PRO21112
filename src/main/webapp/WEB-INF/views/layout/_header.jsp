@@ -26,8 +26,10 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="language-dropdown">
+
 						<a class="language-dd" href="?lang=us">English</a> <a
 							class="language-dd" href="?lang=vi">Việt Nam</a>
+
 					</div>
 					<p class="phone-no">
 						<i class="anm anm-phone-s"></i> +8999999999
@@ -40,6 +42,7 @@
 						class="anm anm-user-al" aria-hidden="true"></i></span>
 					<ul class="customer-links list-inline">
 						<c:if test="${not empty sessionScope.user }">
+
 							<li><a class="fw-bold" href="#">
 									${sessionScope.user.username }</a></li>
 							<li><a href="/logout">Đăng xuất</a></li>
@@ -55,6 +58,7 @@
 							<li><a href="/admin">Admin</a></li>
 						</c:if>
 					</ul>
+
 				</div>
 			</div>
 		</div>
@@ -84,16 +88,20 @@
 					<nav class="grid__item" id="AccessibleNav">
 						<!-- for mobile -->
 						<ul id="siteNav" class="site-nav medium right hidearrow">
+
 							<li class="lvl1 parent megamenu"><a href="/"><s:message
 										code="user.trangchu" /> <i class="anm anm-angle-down-l"></i></a></li>
 							<li class="lvl1 parent megamenu"><a href=""><s:message
 										code="navbar.sanpham" /> <i class="anm anm-angle-down-l"></i>
+
 							</a>
 								<div class="megamenu style4">
 									<ul class="grid grid--uniform mmWrapper">
 										<li class="grid__item lvl-1 col-md-3 col-lg-3"><a
+
 											href="/product/list?kw=" class="site-nav lvl-1"><s:message
 													code="navbar.danhmucsanpham" /></a>
+
 											<ul class="subLinks">
 												<c:forEach var="item" items="${cates}" end="4">
 													<li class="lvl-2"><a
@@ -114,12 +122,14 @@
 											</ul></li>
 									</ul>
 								</div></li>
+
 							<li class="lvl1 parent megamenu"><a href="#"> <s:message
 										code="user.thuonghieu" /> <i class="anm anm-angle-down-l"></i>
 							</a>
 							<li class="lvl1"><a href="#"><b> <s:message
 											code="navbar.muangay" />
 								</b> <i class="anm anm-angle-down-l"></i></a></li>
+
 						</ul>
 					</nav>
 					<!--End Desktop Menu-->
