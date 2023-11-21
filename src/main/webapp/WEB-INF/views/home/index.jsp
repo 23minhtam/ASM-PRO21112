@@ -128,6 +128,8 @@
 							<a href="/product/list?kw=" class="btn"
 								style="vertical-align: middle; text-align: center;">TẤT CẢ
 								SẢN PHẨM</a>
+								style="vertical-align: middle; text-align: center;">user.allproduct</a>
+
 						</div>
 					</div>
 				</div>

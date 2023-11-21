@@ -25,10 +25,13 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="language-dropdown">
-						<span class="language-dd">English</span>
+						<!-- <span class="language-dd">English</span>
 						<ul id="language">
 							<li class="">Việt Nam</li>
-						</ul>
+						</ul> -->
+
+						<a class="language-dd" href="?lang=us">EN</a>
+						<a class="language-dd" href="?lang=vi">VI</a>
 					</div>
 					<p class="phone-no">
 						<i class="anm anm-phone-s"></i> +8999999999
