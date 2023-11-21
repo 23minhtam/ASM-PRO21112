@@ -35,10 +35,11 @@
 	</div>
 	<div class="pageWrapper">
 		<%@include file="./layout/_header.jsp"%>
-
+		
 		<!--Body Content-->
 		<div id="page-content">
 			<!--Page Title-->
+			
 			<div class="page section-header text-center mt-5">
 				<div class="page-title">
 					<div class="wrapper">
@@ -47,7 +48,7 @@
 				</div>
 			</div>
 			<!--End Page Title-->
-
+			
 			<div class="container">
 				<div class="row">
 					<div

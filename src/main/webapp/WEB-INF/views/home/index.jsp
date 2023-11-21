@@ -137,7 +137,7 @@
 					<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="section-header text-center">
 							<a href="/product/list?kw=" class="btn"
-								style="vertical-align: middle; text-align: center;">user.allproduct</a>
+								style="vertical-align: middle; text-align: center;">All Product</a>
 						</div>
 					</div>
 				</div>

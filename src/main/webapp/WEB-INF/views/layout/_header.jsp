@@ -123,9 +123,10 @@
 									</ul>
 								</div></li>
 
-							<li class="lvl1 parent megamenu"><a href="#"> <s:message
+							<li class="lvl1 parent megamenu"><a href="/brand/list"> <s:message
+
 										code="user.thuonghieu" /> <i class="anm anm-angle-down-l"></i>
-							</a>
+							</a></li>
 							<li class="lvl1"><a href="#"><b> <s:message
 											code="navbar.muangay" />
 								</b> <i class="anm anm-angle-down-l"></i></a></li>

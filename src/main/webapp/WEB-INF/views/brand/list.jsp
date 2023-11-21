@@ -44,7 +44,7 @@
 					<div class="collection-hero__image">
 						<img class="blur-up lazyload"
 							data-src="/assets/images/banner.jpeg"
-							src="/assets/images/banner.jpeg" alt="Women" title="Women" />
+							src="/assets/images/banner.jpeg"  />
 					</div>
 					<div class="collection-hero__title-wrapper">
 						<h1 class="collection-hero__title page-width">LIST BRAND</h1>
@@ -62,17 +62,28 @@
 						<br>
 						<br>
 						<div class="row">
-						<c:forEach var="b" items="${brands}">
+						<c:forEach var="b" items="${products}">
 								<div class="col-md-3 mt-3 image-banner-3">
+								<div class="widget-content">
+									<ul class="sidebar_categories">
+										<li class="lvl-1"><c:forEach var="c" items="${cates}">
+												<a href="/product/list?cid=${c.id}" class="site-nav">${c.name}</a>
+											</c:forEach></li>
+
+									</ul>
+								</div>
 									<div class="inner topright">
-										<a href="/product/list?bid=${b.id}"> <img
-											data-src="/images/brand/${b.image}"
-											src="/images/brand/${b.image}" alt="Heeled Boots"
-											title="Heeled Boots" class="blur-up lazyload" />
-											<div class="ttl">
-												<h5>${b.name}</h5>
-											</div>
-										</a>
+										<a href="/product/detail/${p.product.id}"> <!-- image -->
+													<img class="product primary blur-up lazyload"
+													data-src="/images/product/${p.images[0]}"
+													src="/images/product/${p.images[0]}"
+													alt="${p.product.name}" title="${p.product.name}"> <!-- End image -->
+													<!-- Hover image --> <img
+													class="product hover blur-up lazyload"
+													data-src="/images/product/${p.images[1]}"
+													src="/images/product/${p.images[1]}"
+													alt="${p.product.name}" title="${p.product.name}"> <!-- End hover image -->
+												</a>
 									</div>
 								</div>
 							</c:forEach>

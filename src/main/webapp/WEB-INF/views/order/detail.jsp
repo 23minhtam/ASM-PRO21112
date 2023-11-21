@@ -35,7 +35,15 @@
 	</div>
 	<div class="pageWrapper">
 		<%@include file="../layout/_header.jsp"%>
-
+		<!--Breadcrumb-->
+				<div class="bredcrumbWrap">
+					<div class="container breadcrumbs" role="navigation"
+						aria-label="breadcrumbs">
+						<a href="/" title="Back to the home page">Home</a><span
+							aria-hidden="true">›</span><span>Order detail</span>
+					</div>
+				</div>
+				<!--End Breadcrumb-->
 		<!--Body Content-->
 		<!--Body Content-->
 		<div id="page-content">
@@ -48,7 +56,7 @@
 				</div>
 			</div>
 			<!--End Page Title-->
-
+			
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3">
