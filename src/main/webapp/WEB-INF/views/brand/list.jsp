@@ -39,7 +39,9 @@
 		<div id="page-content">
 			<!--Home slider-->
 			<!--Collection Banner-->
+
 			
+
 			<!--End Collection Banner-->
 			<!--End Home slider-->
 

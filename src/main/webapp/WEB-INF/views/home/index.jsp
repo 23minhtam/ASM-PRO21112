@@ -1,7 +1,9 @@
 
+
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ page pageEncoding="utf-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -134,8 +136,10 @@
 					<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="section-header text-center">
 							<a href="/product/list?kw=" class="btn"
+
 								style="vertical-align: middle; text-align: center;"><s:message
 									code="user.tatcasanpham" /></a>
+
 						</div>
 					</div>
 				</div>
@@ -152,6 +156,7 @@
 									class="icon anm anm-truck-l"></i>
 									<h5>
 										<s:message code="user.mienphivanchuyen" />
+
 									</h5> <span class="sub-text"><s:message
 											code="user.mienphivanchuyen2" />  </span></li>
 								<li class="display-table-cell"><i
@@ -161,12 +166,15 @@
 									</h5> <span class="sub-text"> <s:message
 											code="user.nhieukhuyenmaihapdan2" />
 								</span></li>
+
 								<li class="display-table-cell"><i
 									class="icon anm anm-comments-l"></i>
 									<h5>
 										<s:message code="user.sanphamchinhhang" />
+
 									</h5> <span class="sub-text"> <s:message
 											code="user.sanphamchinhhang2" />
+
 								</span></li>
 							</ul>
 						</div>

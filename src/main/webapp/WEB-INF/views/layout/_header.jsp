@@ -26,8 +26,10 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="language-dropdown">
-						<a class="language-dd" href="?lang=us">English</a> <a
-							class="language-dd" href="?lang=vi">Việt Nam</a>
+
+						<a class="language-dd" href="?lang=us">US</a> <a
+							class="language-dd" href="?lang=vi">VI</a>
+
 					</div>
 					<p class="phone-no">
 						<i class="anm anm-phone-s"></i> +8999999999
@@ -40,6 +42,7 @@
 						class="anm anm-user-al" aria-hidden="true"></i></span>
 					<ul class="customer-links list-inline">
 						<c:if test="${not empty sessionScope.user }">
+
 							<li><a class="fw-bold" href="#">
 									${sessionScope.user.username }</a></li>
 							<li><a href="/logout"><s:message code="user.dangxuat" /></a></li>
@@ -47,14 +50,17 @@
 							<li><a href="/order/wishlist"><s:message code="user.sanphamyeuthich" /></a></li>
 						</c:if>
 						<c:if test="${empty sessionScope.user }">
+
 							<li><a href="/login"><s:message code="user.dangnhap" /></a></li>
 							<li><a href="/register"><s:message
 										code="user.taotaikhoan" /></a></li>
+
 						</c:if>
 						<c:if test="${not empty sessionScope.userAdmin}">
 							<li><a href="/admin"><s:message code="user.admin" /></a></li>
 						</c:if>
 					</ul>
+
 				</div>
 			</div>
 		</div>
@@ -67,8 +73,7 @@
 				<!--Desktop Logo-->
 				<div class="logo col-md-2 col-lg-2 d-none d-lg-block">
 					<a style="text-decoration: none;" href="/"><h1
-							style="font-size: 20px; font-weight: 600; color: rgb(39, 39, 39);">Kim
-							Cương TxT</h1> </a>
+							style="font-size: 20px; font-weight: 600; color: rgb(39, 39, 39);"><s:message code="name.tencuahang" /></h1> </a>
 
 
 				</div>
@@ -84,16 +89,20 @@
 					<nav class="grid__item" id="AccessibleNav">
 						<!-- for mobile -->
 						<ul id="siteNav" class="site-nav medium right hidearrow">
+
 							<li class="lvl1 parent megamenu"><a href="/"><s:message
 										code="user.trangchu" /> <i class="anm anm-angle-down-l"></i></a></li>
 							<li class="lvl1 parent megamenu"><a href=""><s:message
 										code="user.sanpham" /> <i class="anm anm-angle-down-l"></i>
+
 							</a>
 								<div class="megamenu style4">
 									<ul class="grid grid--uniform mmWrapper">
 										<li class="grid__item lvl-1 col-md-3 col-lg-3"><a
+
 											href="/product/list?kw=" class="site-nav lvl-1"><s:message
 													code="user.danhmucsanpham" /></a>
+
 											<ul class="subLinks">
 												<c:forEach var="item" items="${cates}" end="4">
 													<li class="lvl-2"><a
@@ -114,12 +123,15 @@
 											</ul></li>
 									</ul>
 								</div></li>
-							<li class="lvl1 parent megamenu"><a href="/brand/list"> <s:message
-										code="user.thuonghieu" /> <i class="anm anm-angle-down-l"></i>
+
+							<li class="lvl1 parent megamenu"><a href="/brand/list"> <s:message code="user.thuonghieu" /> <i class="anm anm-angle-down-l"></i>
 							</a></li>
+
 							<li class="lvl1"><a href="#"><b> <s:message
 											code="user.muangay" />
+
 								</b> <i class="anm anm-angle-down-l"></i></a></li>
+
 						</ul>
 					</nav>
 					<!--End Desktop Menu-->
@@ -140,4 +152,6 @@
 		</div>
 	</div>
 	<!--End Header-->
+
+
 </div>
