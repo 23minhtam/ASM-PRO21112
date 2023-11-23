@@ -2,7 +2,7 @@ var app = angular.module("shopping-app",[]);
 app.controller("shopping-ctrl", function($scope, $http){
 	
 	$scope.cart = {
-		iatems: [],
+		items: [],
 		add(id){
 			var item = this.items.find(item => item.id == id);
 			if(item){

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+	<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -41,7 +42,10 @@
 			<div class="page section-header text-center mt-5">
 				<div class="page-title">
 					<div class="wrapper">
-						<h1 class="page-width"><s:message code="user.dangnhap"/></h1>
+
+						<h1 class="page-width"><s:message
+						code="user.dangnhap" /></h1>
+
 					</div>
 				</div>
 			</div>
@@ -51,8 +55,12 @@
 				<div class="bredcrumbWrap">
 					<div class="container breadcrumbs" role="navigation"
 						aria-label="breadcrumbs">
-						<a href="/" title="Back to the home page"><s:message code="user.home"/></a><span
-							aria-hidden="true">›</span><span><s:message code="user.login"/></span>
+
+						<a href="/" title="Back to the home page"><s:message
+						code="user.trangchu" /></a><span
+							aria-hidden="true">›</span><span><s:message
+						code="user.dangnhap" /></span>
+
 					</div>
 				</div>
 				<!--End Breadcrumb-->
@@ -67,7 +75,10 @@
 								<div class="row">
 									<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 										<div class="form-group">
-											<label for="CustomerEmail"><s:message code="user.Username "/></label>
+
+											<label for="CustomerEmail"><s:message
+						code="user.tendangnhap" /></label>
+
 											<input type="text" name="username" placeholder=""
 												id="CustomerEmail" class="" autocorrect="off"
 												autocapitalize="off" autofocus="">
@@ -75,7 +86,10 @@
 									</div>
 									<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 										<div class="form-group">
-											<label for="CustomerPassword"><s:message code="user.password"/></label>
+
+											<label for="CustomerPassword"><s:message
+						code="user.matkhau" /></label>
+
 											<input type="password" value="" name="password" placeholder=""
 												id="CustomerPassword" class="">
 										</div>
@@ -91,7 +105,10 @@ user.quenmatkhau = Quên mất khẩu
 user.taotaikhoan = Tạo tài khoản -->
 									<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 										<div class="form-group">
-											<label><s:message code="user.ghinho "/></label>
+
+											<label><s:message
+						code="user.ghinho" /></label>
+
 											<input type="checkbox" name="remember-me">
 										</div>
 									</div>
@@ -105,11 +122,16 @@ user.taotaikhoan = Tạo tài khoản -->
 								</div>
 								<div class="row">
 									<div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
-										<input type="submit" class="btn mb-3" value="Đăng nhập">
+										<input type="submit" class="btn mb-3" value="<s:message
+						code="user.dangnhap" />">
 										<p class="mb-4">
-											<a href="forgot-password" id="RecoverPassword"><s:message code="user.quenmatkhau"/></a>
+
+											<a href="forgot-password" id="RecoverPassword"><s:message
+						code="user.quenmatkhau" />?</a>
 											&nbsp; | &nbsp; 
-											<a href="register" id="customer_register_link"><s:message code="user.taotaikhoan"/> </a>
+											<a href="register" id="customer_register_link"><s:message
+						code="user.taotaikhoan" />?</a>
+
 										</p>
 									</div>
 								</div>

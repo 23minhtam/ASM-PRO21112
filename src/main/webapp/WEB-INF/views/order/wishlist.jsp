@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -38,8 +39,12 @@
 				<div class="bredcrumbWrap">
 					<div class="container breadcrumbs" role="navigation"
 						aria-label="breadcrumbs">
-						<a href="/" title="Back to the home page"><s:message code="user.home"/></a><span
-							aria-hidden="true">›</span><span><s:message code="user.wishlist"/></span>
+
+						<a href="/" title="Back to the home page"><s:message
+						code="user.trangchu" /></a><span
+							aria-hidden="true">›</span><span><s:message
+						code="user.sanphamyeuthich" /></span>
+
 					</div>
 				</div>
 				<!--End Breadcrumb-->
@@ -57,7 +62,10 @@ user.freeship= Miễn phí vận chuyển đơn hàng từ 10000$ nội thành T
 			<div class="page section-header text-center mt-5">
 				<div class="page-title">
 					<div class="wrapper">
-						<h1 class="page-width"><s:message code="user.sanphamyeuthich"/></h1>
+
+						<h1 class="page-width"><s:message
+						code="user.sanphamyeuthich" /></h1>
+
 					</div>
 				</div>
 			</div>
@@ -70,7 +78,10 @@ user.freeship= Miễn phí vận chuyển đơn hàng từ 10000$ nội thành T
 							<table>
 								<thead class="wishlist__row wishlist__header">
 									<tr>
-										<th colspan="2" class="text-center"><s:message code="user.sanpham "/></th>
+
+										<th colspan="2" class="text-center"><s:message
+						code="user.sanpham" /></th>
+
 										<th class="action">&nbsp;</th>
 									</tr>
 								</thead>
@@ -95,19 +106,24 @@ user.freeship= Miễn phí vận chuyển đơn hàng từ 10000$ nội thành T
 									<tr>
 										<td colspan="3" class="text-left"><a href="/product/list"
 											class="btn--link wishlist-continue"><i
-												class="icon icon-arrow-circle-left"></i> <s:message code="user.tieptucmuasam"/></a></td>
-										<td colspan="3" class="text-right">
-										<button
+
+												class="icon icon-arrow-circle-left"></i> <s:message
+						code="user.tieptucmuasam" /></a></td>
+										<td colspan="3" class="text-right"><button
 												ng-click="wishlist.clear()" type="submit" name="update"
 												class="btn--link wishlist-update">
-												<i class="fa fa-refresh"></i><s:message code="user.capnhat"/>
-										</button>
-										</td>
+												<i class="fa fa-refresh"></i> <s:message
+						code="user.capnhat" />
+											</button></td>
+
 									</tr>
 								</tfoot>
 							</table>
 
-							<div class="currencymsg"><s:message code="user.capnhat"/>user.freeship</div>
+
+							<div class="currencymsg"><s:message
+						code="user.a" /></div>
+
 							<hr>
 
 

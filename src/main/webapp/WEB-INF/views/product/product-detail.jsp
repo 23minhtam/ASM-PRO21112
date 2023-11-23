@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+    <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -46,7 +47,8 @@
 				<div class="bredcrumbWrap">
 					<div class="container breadcrumbs" role="navigation"
 						aria-label="breadcrumbs">
-						<a href="/" title="Back to the home page">Home</a><span
+						<a href="/" title="Back to the home page"><s:message
+						code="user.trangchu" /></a><span
 							aria-hidden="true">›</span><span>${product.product.name}</span>
 					</div>
 				</div>
@@ -98,11 +100,7 @@
 										<a href="#" class="next" title="Next"><i
 											class="fa fa-angle-right" aria-hidden="true"></i></a>
 									</div>
-									<div class="prInfoRow">
-										<div class="product-stock">
-											<span class="instock ">In Stock</span>
-										</div>
-									</div>
+									
 									<p
 										class="product-single__price product-single__price-product-template">
 										<span
@@ -112,11 +110,8 @@
 										</span>
 									</p>
 									<div class="product-single__description rte">
-										<p>But I must explain to you how all this mistaken idea of
-											denouncing pleasure and praising pain was born and I will
-											give you a complete account of the system, and expound the
-											actual teachings of the great explorer of the truth, the
-											master-builder of human happiness.</p>
+										<p><s:message
+						code="user.tieusukimcuong" /></p>
 									</div>
 									<form method="post" action="http://annimexweb.com/cart/add"
 										id="product_form_10508262282" accept-charset="UTF-8"
@@ -130,8 +125,8 @@
 													ng-click="cart.add(${product.product.id}) "
 													type="button" name="add"
 													class="btn product-form__cart-submit">
-													<span id="AddToCartText-product-template">Thêm vào
-														giỏ hàng</span>
+													<span id="AddToCartText-product-template"><s:message
+						code="user.themvaogiohang" /></span>
 												</button>
 											</div>
 										</div>
@@ -143,7 +138,8 @@
 											<div class="wishlist-btn">
 												<a class="wishlist add-to-wishlist" ng-click="wishlist.add(${product.product.id})"
 													title="Add to Wishlist"><i class="icon anm anm-heart-l"
-													aria-hidden="true"></i><span> Thêm Vào Yêu Thích</span> </a>
+													aria-hidden="true"></i><span> <s:message
+						code="user.themvaosanphamyeuthich" /></span> </a>
 											</div>
 										</div>
 										<div class="display-table-cell text-right">
@@ -171,7 +167,8 @@
 								<br>
 								<div class="product-info">
 									<p class="product-type">
-										<span class="lbl">Loại hàng:</span>
+										<span class="lbl"><s:message
+						code="user.loaihang" />:</span>
 										<c:forEach var="c" items="${product.product.productCategories}">
 											<a href="/product/list?cid=${c.category.id}"
 												>${c.category.name}</a>
@@ -187,19 +184,14 @@
 						<div class="tabs-listing">
 							<ul class="product-tabs">
 								<li rel="tab1"><a
-									class="mt-3 tablink text-uppercase product-price__price product-price__price-product-template">Mô
-										tả sản phẩm</a></li>
+									class="mt-3 tablink text-uppercase product-price__price product-price__price-product-template"><s:message
+						code="user.motasanpham" /></a></li>
 							</ul>
 							<div class="tab-container mb-5">
 								<div id="tab1" class="tab-content">
 									<div class="product-description rte">
-										<p>Lorem Ipsum is simply dummy text of the printing and
-											typesetting industry. Lorem Ipsum has been the industry's
-											standard dummy text ever since the 1500s, when an unknown
-											printer took a galley of type and scrambled it to make a type
-											specimen book. It has survived not only five centuries, but
-											also the leap into electronic typesetting, remaining
-											essentially unchanged.</p>
+										<p><s:message
+						code="user.tieusukimcuong1" /></p>
 									</div>
 								</div>
 							</div>
@@ -210,7 +202,8 @@
 						<div class="related-product grid-products">
 							<header class="section-header">
 								<h2 class="section-header__title text-center h2">
-									<span>Sản phẩm liên quan</span>
+									<span><s:message
+						code="user.sanphamlienquan" /></span>
 								</h2>
 
 							</header>
@@ -237,8 +230,8 @@
 											<!-- Start product button -->
 											<form class="variants add">
 												<button ng-click="cart.add(${p.product.id})"
-													class="btn btn-addto-cart" type="button" tabindex="0">ADD
-													TO CART</button>
+													class="btn btn-addto-cart" type="button" tabindex="0"><s:message
+						code="user.themvaogiohang" /></button>
 											</form>
 											<div class="button-set">
 												<div class="wishlist-btn">

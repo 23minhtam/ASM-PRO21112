@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 	<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 	<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+	<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -43,7 +44,10 @@
 		<div class="page section-header text-center">
 			<div class="page-title">
 				<div class="wrapper">
-					<h1 class="page-width"><s:message code="user.dangky"/></h1>
+
+					<h1 class="page-width"><s:message
+						code="user.dangkitaikhoan" /></h1>
+
 				</div>
 			</div>
 		</div>
@@ -52,8 +56,12 @@
 				<div class="bredcrumbWrap">
 					<div class="container breadcrumbs" role="navigation"
 						aria-label="breadcrumbs">
-						<a href="/" title="Back to the home page"><s:message code="user.home"/></a><span
-							aria-hidden="true">›</span><span><s:message code="user.register"/></span>
+
+						<a href="/" title="Back to the home page"><s:message
+						code="user.trangchu" /></a><span
+							aria-hidden="true">›</span><span><s:message
+						code="user.dangki" /></span>
+
 					</div>
 				</div>
 				<!--End Breadcrumb-->
@@ -80,20 +88,26 @@
 							<div class="row">
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 									<div class="form-group">
-										<label for="FirstName"><s:message code="user.Username"/></label> 
+
+										<label for="FirstName"><s:message
+						code="user.tendangnhap" /></label> 
 										<form:input path="username" ng-model="username" name="username" required="required" placeholder=""
 											id="FirstName" autofocus=""/>
 										<div ng-show="frmregister.username.$invalid"
-											class="badge badge-danger m-2"><s:message code="user.pleaseenterusername "/>user.pleaseenterusername </div>
+											class="badge badge-danger m-2"><s:message
+						code="user.vuilongnhaptendangnhap" /></div>
 									</div>
 								</div>
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12">
-							<div class="form-group">
-										<label for="FirstName"><s:message code="user.fullname "/></label> 
+									<div class="form-group">
+										<label for="FirstName"><s:message
+						code="user.hovaten" /></label> 
 										<form:input path="fullname" ng-model="fullname" name="fullname" required="required" placeholder=""
 											id="FirstName" autofocus=""/>
 										<div ng-show="frmregister.fullname.$invalid"
-											class="badge badge-danger m-2"><s:message code="user.pleaseenterfullname"/></div>
+											class="badge badge-danger m-2"><s:message
+						code="user.vuilongnhaphovaten" /></div>
+
 									</div>
 								</div>
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -103,35 +117,52 @@
 											id="CustomerEmail" class="" autocorrect="off"
 											autocapitalize="off" autofocus=""/>
 										<div ng-show="frmregister.email.$invalid"
-											class="badge badge-danger m-2"><s:message code="user.pleaseenterEmail"/></div>
+
+											class="badge badge-danger m-2"><s:message
+						code="user.vuilongnhapemail" /></div>
+
 									</div>
 								</div>
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 									<div class="form-group">
-										<label for="CustomerPassword"><s:message code="user.pasword"/></label> 
+
+										<label for="CustomerPassword"><s:message
+						code="user.matkhau" /></label> 
 										<form:password path="password" ng-model="password" value="" required="required"
 											name="password" placeholder="" id="CustomerPassword" class=""/>
 										<div ng-show="frmregister.password.$invalid"
-											class="badge badge-danger m-2"><s:message code="user.pleaseenterpassword"/></div>
+											class="badge badge-danger m-2"><s:message
+						code="user.vuilongnhapmatkhau" /></div>
+
 									</div>
 								</div>
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 									<div class="form-group">
-										<label for="CustomerPassword"><s:message code="user.chkpassword"/></label> 
+
+										<label for="CustomerPassword"><s:message
+						code="user.xacnhanmatkhau" /></label> 
+
 										<form:password path="" ng-model="password1" value=""
 											name="password1" required="required" placeholder=""
 											id="CustomerPassword" class=""/>
 										<div ng-show="frmregister.password1.$invalid"
-											class="badge badge-danger m-2"><s:message code="user.pleaseconfirmpassword"/></div>
+
+											class="badge badge-danger m-2"><s:message
+						code="user.vuilongnhapxacnhanmatkhau" /></div>
 										<div ng-show="password != password1"
-											class="badge badge-danger m-2"><s:message code="user.chkpasswordfail"/></div>
+											class="badge badge-danger m-2"><s:message
+						code="user.xacnhanmatkhaukhongdung" /></div>
+
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
 									<button ng-disabled="frmregister.$invalid" type="submit"
-										class="btn mb-3"><s:message code="user.signup "/></button>
+
+										class="btn mb-3"><s:message
+						code="user.taotaikhoan" /></button>
+
 								</div>
 							</div>
 						</form:form>

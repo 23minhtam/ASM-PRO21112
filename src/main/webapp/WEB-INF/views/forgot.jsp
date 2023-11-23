@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+	    <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -43,7 +44,10 @@
 			<div class="page section-header text-center mt-5">
 				<div class="page-title">
 					<div class="wrapper">
-						<h1 class="page-width"><s:message code="user.quenmatkhau"/> </h1>
+
+						<h1 class="page-width"><s:message
+						code="user.quenmatkhau" /></h1>
+
 					</div>
 				</div>
 			</div>
@@ -63,7 +67,10 @@ user.taotaikhoan = Sign in -->
 								<div class="row">
 									<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 										<div class="form-group">
-											<label for="CustomerEmail"><s:message code="user.username"/></label> <input
+
+											<label for="CustomerEmail"><s:message
+						code="user.tendangnhap" /></label> <input
+
 												type="text" name="username" placeholder=""
 												id="CustomerEmail" class="" autocorrect="off"
 												autocapitalize="off" autofocus="">
@@ -81,8 +88,12 @@ user.taotaikhoan = Sign in -->
 									<div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
 										<input type="submit" class="btn mb-3" value="Đăng nhập">
 										<p class="mb-4">
-											<a href="/login" id="RecoverPassword"><s:message code="user.login"/></a> &nbsp; |
-											&nbsp; <a href="register" id="customer_register_link"><s:message code="user.taotaikhoan"/></a>
+
+											<a href="/login" id="RecoverPassword"><s:message
+						code="user.dangnhap" /></a> &nbsp; |
+											&nbsp; <a href="register" id="customer_register_link"><s:message
+						code="user.taotaikhoan" />?</a>
+
 										</p>
 									</div>
 								</div>

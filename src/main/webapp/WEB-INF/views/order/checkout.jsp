@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -38,8 +39,12 @@
 				<div class="bredcrumbWrap">
 					<div class="container breadcrumbs" role="navigation"
 						aria-label="breadcrumbs">
-						<a href="/" title="Back to the home page"><s:message code="user.home"/></a><span
-							aria-hidden="true">›</span><span><s:message code="user.checkout"/></span>
+
+						<a href="/" title="Back to the home page"><s:message
+						code="user.trangchu" /></a><span
+							aria-hidden="true">›</span><span><s:message
+						code="user.thutucthanhtoan" /></span>
+
 					</div>
 				</div>
 				<!--End Breadcrumb-->
@@ -50,7 +55,10 @@
 			<div class="page section-header text-center mt-5">
 				<div class="page-title">
 					<div class="wrapper">
-						<h1 class="page-width"><s:message code="user.CHECKOUTS"/></h1>
+
+						<h1 class="page-width"><s:message
+						code="user.thutucthanhtoan" /></h1>
+
 					</div>
 				</div>
 			</div>
@@ -61,9 +69,13 @@
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3">
 						<div class="customer-box returning-customer">
 							<h3>
-								<i class="icon anm anm-user-al"></i><s:message code="user.editaccount"/><a href="#customer-login" id="customer"
+
+								<i class="icon anm anm-user-al"></i> <s:message
+						code="user.chinhsuataikhoan" /> &nbsp; | &nbsp; <a href="#customer-login" id="customer"
 									class="text-white text-decoration-underline"
-									data-toggle="collapse"><s:message code="user.Clickhere"/>Click here</a>
+									data-toggle="collapse"><s:message
+						code="user.bamvaoday" /></a>
+
 							</h3>
 						</div>
 					</div>
@@ -71,18 +83,26 @@
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3">
 						<div class="customer-box customer-coupon">
 							<h3 class="font-15 xs-font-13">
-								<i class="icon anm anm-gift-l"></i><s:message code=" user.doyouhavevoucher"/> <a
+
+								<i class="icon anm anm-gift-l"></i> <s:message
+						code="user.bancomagiamgiakhong" /> &nbsp; | &nbsp; <a
 									href="#have-coupon"
 									class="text-white text-decoration-underline"
-									data-toggle="collapse"></i><s:message code="user.clickheretoaddvoucher"/></a>
+									data-toggle="collapse"><s:message
+						code="user.bamvaodaydethemmagiagiam" /></a>
+
 							</h3>
 							<div id="have-coupon" class="collapse coupon-checkout-content">
 								<div class="discount-coupon">
 									<div id="coupon" class="coupon-dec tab-pane active">
 										<label class="required get" for="coupon-code"><span
-											class="required-f">*</span> <s:message code="user.voucher"/></label> <input id="coupon-code"
+
+											class="required-f">*</span> <s:message
+						code="user.magiamgia" /></label> <input id="coupon-code"
 											required="" type="text" class="mb-3">
-										<button class="coupon-btn btn" type="submit"> <s:message code="user.usevoucher "/></button>
+										<button class="coupon-btn btn" type="submit"><s:message
+						code="user.sudungmagiamgia" /></button>
+
 									</div>
 								</div>
 							</div>
@@ -96,17 +116,24 @@
 						<div class="create-ac-content bg-light-gray padding-20px-all">
 							<form name="frmOrder">
 								<fieldset>
-									<h2 class="login-title mb-3"><s:message code="user.checkoutinformation"/></h2>
+
+									<h2 class="login-title mb-3"><s:message
+						code="user.thongtinthutucthanhtoan" /> </h2>
 									<div class="row">
 										<div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-											<label for="input-firstname "><s:message code="user.username"/><span
+											<label for="input-firstname "><s:message
+						code="user.tendangnhap" /><span
+
 												class="required-f">*</span></label>
 											<div id="username">${userDetail.username}</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-											<label for="input-firstname"><s:message code="user.fullname"/><span
+
+											<label for="input-firstname"><s:message
+						code="user.hovaten" /><span
+
 												class="required-f">*</span></label> <input disabled="disabled"
 												name="fullname" value="${userDetail.fullname}"
 												id="input-firstname" type="text">
@@ -125,19 +152,28 @@
 								<fieldset>
 									<div class="row">
 										<div class="form-group col-md-6 col-lg-6 col-xl-6 required">
-											<label for="input-address-1"><s:message code="user.address "/><span
+
+											<label for="input-address-1"><s:message
+						code="user.diachi1" /> <span
+
 												class="required-f">*</span></label> <input name="address"
 												ng-model="order.address" id="input-address-1" required
 												type="text">
 											<div ng-show="frmOrder.address.$invalid"
-												class="badge badge-danger m-2"><s:message code="user.pleseenteraddress"/></div>
+
+												class="badge badge-danger m-2"><s:message
+						code="user.vuilongnhapdiachi" /></div>
+
 										</div>
 									</div>
 								</fieldset>
 								<fieldset>
 									<div class="row">
 										<div class="form-group col-md-12 col-lg-12 col-xl-12">
-											<label for="input-company"><s:message code="user.note"/><span
+
+											<label for="input-company"><s:message
+						code="user.ghichu" /><span
+
 												class="required-f">*</span></label>
 											<textarea class="form-control resize-both" rows="3"></textarea>
 										</div>
@@ -150,17 +186,26 @@
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
 						<div class="your-order-payment">
 							<div class="your-order">
-								<h2 class="order-title mb-4"><s:message code="user.yourorder"/></h2>
+
+								<h2 class="order-title mb-4"><s:message
+						code="user.donhangcuaban" /></h2>
+
 
 								<div class="table-responsive-sm order-table">
 									<table
 										class="bg-white table table-bordered table-hover text-center">
 										<thead>
 											<tr>
-												<th class="text-left"><s:message code="user.product"/></th>
-												<th><s:message code="user.price"/></th>
-												<th><s:message code="user.quanlity"/></th>
-												<th><s:message code="user.total"/></th>
+
+												<th class="text-left"><s:message
+						code="user.sanpham" /></th>
+												<th><s:message
+						code="user.gia" /></th>
+												<th><s:message
+						code="user.soluong" /></th>
+												<th><s:message
+						code="user.tongcong" /></th>
+
 											</tr>
 										</thead>
 										<tbody>
@@ -173,7 +218,9 @@
 										</tbody>
 										<tfoot class="font-weight-600">
 											<tr>
-												<td colspan="4" class="text-right font-weight-bold"><s:message code="user.checkout"/></td>
+
+												
+
 												<td class="font-weight-bold">{{cart.amount | number:0}}$</td>
 											</tr>
 										</tfoot>
@@ -187,7 +234,10 @@
 									<div class="order-button-payment">
 										<button ng-disabled="frmOrder.$invalid"
 											ng-click="order.purchase()" class="btn" value="Place order"
-											type="submit"><s:message code="user.submit"/></button>
+
+											type="submit"><s:message
+						code="user.thanhtoan" /></button>
+
 									</div>
 								</div>
 							</div>

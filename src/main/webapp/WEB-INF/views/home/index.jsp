@@ -59,7 +59,7 @@
 						<div class="col-12 col-sm-12 col-md-12 col-lg-12 ">
 							<div class="section-header text-center">
 								<h2 class="h2">
-									<s:message code="user.home" />
+									<s:message code="user.sanphammoi" />
 								</h2>
 							</div>
 						</div>
@@ -111,14 +111,13 @@
 													</button>
 												</form>
 												<c:if test="${not empty sessionScope.user }">
-												<form class="variants add" action="#" method="post">
-													<button  
-														ng-click="wishlist.add(${d.product.id})"
-														class="btn cartIcon btn-addto-cart" type="button"
-														tabindex="0">
-														<i class="icon anm anm-heart-l"></i>
-													</button>
-												</form>
+													<form class="variants add" action="#" method="post">
+														<button ng-click="wishlist.add(${d.product.id})"
+															class="btn cartIcon btn-addto-cart" type="button"
+															tabindex="0">
+															<i class="icon anm anm-heart-l"></i>
+														</button>
+													</form>
 												</c:if>
 											</div>
 											<!-- end product button -->
@@ -137,7 +136,10 @@
 					<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="section-header text-center">
 							<a href="/product/list?kw=" class="btn"
-								style="vertical-align: middle; text-align: center;"><s:message code="user.allproduct"/></a>
+
+								style="vertical-align: middle; text-align: center;"><s:message
+									code="user.tatcasanpham" /></a>
+
 						</div>
 					</div>
 				</div>
@@ -154,17 +156,25 @@
 									class="icon anm anm-truck-l"></i>
 									<h5>
 										<s:message code="user.mienphivanchuyen" />
-									</h5> <span class="sub-text"> <s:message code="user.mmienphivanchuyen" /></span></li>
+
+									</h5> <span class="sub-text"><s:message
+											code="user.mienphivanchuyen2" />  </span></li>
 								<li class="display-table-cell"><i
 									class="icon anm anm-money-bill-ar"></i>
 									<h5>
-										<s:message code="user.khuyenmaihapdan" />
-									</h5> <span class="sub-text"> <s:message code="user.mkhuyenmaihapdan" /></span></li>
+										<s:message code="user.nhieukhuyenmaihapdan" />
+									</h5> <span class="sub-text"> <s:message
+											code="user.nhieukhuyenmaihapdan2" />
+								</span></li>
+
 								<li class="display-table-cell"><i
 									class="icon anm anm-comments-l"></i>
 									<h5>
 										<s:message code="user.sanphamchinhhang" />
-									</h5> <span class="sub-text"> <s:message code="user.msanphamchinhhang" />
+
+									</h5> <span class="sub-text"> <s:message
+											code="user.sanphamchinhhang2" />
+
 								</span></li>
 							</ul>
 						</div>

@@ -50,11 +50,14 @@
 							<li><a href="/order/wishlist"><s:message code="user.sanphamyeuthich" /></a></li>
 						</c:if>
 						<c:if test="${empty sessionScope.user }">
-							<li><a href="/login"><s:message code="user.login" /></a></li>
-							<li><a href="/register"><s:message code="user.taotaikhoan" /></a></li>
+
+							<li><a href="/login"><s:message code="user.dangnhap" /></a></li>
+							<li><a href="/register"><s:message
+										code="user.taotaikhoan" /></a></li>
+
 						</c:if>
 						<c:if test="${not empty sessionScope.userAdmin}">
-							<li><a href="/admin">Admin</a></li>
+							<li><a href="/admin"><s:message code="user.admin" /></a></li>
 						</c:if>
 					</ul>
 
@@ -87,15 +90,18 @@
 						<!-- for mobile -->
 						<ul id="siteNav" class="site-nav medium right hidearrow">
 
-							<li class="lvl1 parent megamenu"><a href="/"><s:message code="user.trangchu" /> <i class="anm anm-angle-down-l"></i></a></li>
-							<li class="lvl1 parent megamenu"><a href=""><s:message code="navbar.sanpham" /> <i class="anm anm-angle-down-l"></i>
+							<li class="lvl1 parent megamenu"><a href="/"><s:message
+										code="user.trangchu" /> <i class="anm anm-angle-down-l"></i></a></li>
+							<li class="lvl1 parent megamenu"><a href=""><s:message
+										code="user.sanpham" /> <i class="anm anm-angle-down-l"></i>
 
 							</a>
 								<div class="megamenu style4">
 									<ul class="grid grid--uniform mmWrapper">
 										<li class="grid__item lvl-1 col-md-3 col-lg-3"><a
 
-											href="/product/list?kw=" class="site-nav lvl-1"><s:message code="navbar.danhmucsanpham" /></a>
+											href="/product/list?kw=" class="site-nav lvl-1"><s:message
+													code="user.danhmucsanpham" /></a>
 
 											<ul class="subLinks">
 												<c:forEach var="item" items="${cates}" end="4">
@@ -120,7 +126,10 @@
 
 							<li class="lvl1 parent megamenu"><a href="/brand/list"> <s:message code="user.thuonghieu" /> <i class="anm anm-angle-down-l"></i>
 							</a></li>
-							<li class="lvl1"><a href="#"><b> <s:message code="navbar.muangay" />
+
+							<li class="lvl1"><a href="#"><b> <s:message
+											code="user.muangay" />
+
 								</b> <i class="anm anm-angle-down-l"></i></a></li>
 
 						</ul>
@@ -143,28 +152,6 @@
 		</div>
 	</div>
 	<!--End Header-->
-	<!--Mobile Menu-->
-	<div class="mobile-nav-wrapper" role="navigation">
-		<div class="closemobileMenu">
-			<i class="icon anm anm-times-l pull-right"></i> <s:message code="user.dongmenu" />
-		</div>
-		<ul id="MobileNav" class="mobile-nav">
-			<li class="lvl1 parent megamenu"><a href="/home/index"><s:message code="user.trangchu" /></a></li>
-			<li class="lvl1 parent megamenu"><a href="#"><s:message code="user.sanpham" /><i
-					class="anm anm-plus-l"></i></a>
-				<ul>
-					<li><a href="product-layout-1.html" class="site-nav"> </a></li>
-					<c:forEach var="cate" items="${categories }">
-						<li><a href="/product/list?cate=${cate.id}" class="site-nav">${cate.name}</a></li>
-					</c:forEach>
-				</ul></li>
-			<li class="lvl1 parent megamenu"><a href="product-layout-1.html"><s:message code="user.thuonghieu" /><i class="anm anm-plus-l"></i>
-			</a>
-				<ul>
-					<li><a href="product-layout-1.html" class="site-nav"> </a></li>
-				</ul></li>
-			<li class="lvl1"><a href="#"><b><s:message code="user.buynow" /></b></a></li>
-		</ul>
-	</div>
-	<!--End Mobile Menu-->
+
+
 </div>
