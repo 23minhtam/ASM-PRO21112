@@ -46,7 +46,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href='#!authenticate'>
+                        <a href="#!authenticate">
                             <i class="fa-solid fa-lock"></i>
                             <span class="nav-title">Authenticate</span>
                         </a>

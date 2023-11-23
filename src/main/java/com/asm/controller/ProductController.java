@@ -59,7 +59,7 @@ public class ProductController {
 		return "product/list";
 	}
 
-	@GetMapping("/list/brand")
+	@GetMapping("/brand")
 	public String filterByListBrand(Model model, @RequestParam("bid") List<String> bid,
 			@RequestParam("p") Optional<Integer> p) {
 		Page<Product> lstProduct = pService.findProductByListBrand(bid, p);

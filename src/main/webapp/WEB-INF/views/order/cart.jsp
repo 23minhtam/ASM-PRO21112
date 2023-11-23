@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -35,26 +36,29 @@
 	<div class="pageWrapper">
 		<%@include file="../layout/_header.jsp"%>
 		<!--Breadcrumb-->
-				<div class="bredcrumbWrap">
-					<div class="container breadcrumbs" role="navigation"
-						aria-label="breadcrumbs">
-						<a href="/" title="Back to the home page">Home</a><span
-							aria-hidden="true">›</span><span>Cart</span>
-					</div>
-				</div>
-				<!--End Breadcrumb-->
+		<div class="bredcrumbWrap">
+			<div class="container breadcrumbs" role="navigation"
+				aria-label="breadcrumbs">
+				<a href="/" title="Back to the home page"><s:message
+						code="user.trangchu" /></a><span aria-hidden="true">›</span><span><s:message
+						code="user.giohang" /></span>
+			</div>
+		</div>
+		<!--End Breadcrumb-->
 		<!--Body Content-->
 		<div id="page-content">
 			<!--Page Title-->
 			<div class="page section-header text-center mt-5">
 				<div class="page-title">
 					<div class="wrapper">
-						<h1 class="page-width">Giỏ hàng</h1>
+						<h1 class="page-width">
+							<s:message code="user.giohang" />
+						</h1>
 					</div>
 				</div>
 			</div>
 			<!--End Page Title-->
-			
+
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-sm-12 col-md-8 col-lg-8 main-col">
@@ -62,10 +66,11 @@
 							<table>
 								<thead class="cart__row cart__header">
 									<tr>
-										<th colspan="2" class="text-center">Sản phẩm</th>
-										<th class="text-center">Giá</th>
-										<th class="text-center">Số lượng</th>
-										<th class="text-right">Tổng cộng</th>
+										<th colspan="2" class="text-center"><s:message
+												code="user.sanpham" /></th>
+										<th class="text-center"><s:message code="user.gia" /></th>
+										<th class="text-center"><s:message code="user.soluong" /></th>
+										<th class="text-right"><s:message code="user.tongcong" /></th>
 										<th class="action">&nbsp;</th>
 									</tr>
 								</thead>
@@ -102,7 +107,8 @@
 													0}} $</span>
 											</div>
 										</td>
-										<td class="text-center small--hide"><a ng-click="cart.remove(i.id)" href=""
+										<td class="text-center small--hide"><a
+											ng-click="cart.remove(i.id)" href=""
 											class="btn btn--secondary cart__remove" title="Remove tem"><i
 												class="icon icon anm anm-times-l"></i></a></td>
 									</tr>
@@ -111,19 +117,19 @@
 									<tr>
 										<td colspan="3" class="text-left"><a href="/product/list"
 											class="btn--link cart-continue"><i
-												class="icon icon-arrow-circle-left"></i> Tiếp tục mua sắm</a></td>
+												class="icon icon-arrow-circle-left"></i> <s:message
+													code="user.tieptucmuasam" /></a></td>
 										<td colspan="3" class="text-right"><button
 												ng-click="cart.clear()" type="submit" name="update"
 												class="btn--link cart-update">
-												<i class="fa fa-refresh"></i> Cập nhật
+												<i class="fa fa-refresh"></i>
+												<s:message code="user.capnhat" />
 											</button></td>
 									</tr>
 								</tfoot>
 							</table>
 
-							<div class="currencymsg">Miễn phí vận chuyển đơn hàng từ
-								10000$ nội thành TPHCM, ngoại thành chịu phí ship sẽ được cập nhật
-								ở bước thanh toán</div>
+							<div class="currencymsg"><s:message code="user.a" /></div>
 							<hr>
 
 
@@ -132,14 +138,15 @@
 					<div class="col-12 col-sm-12 col-md-4 col-lg-4 cart__footer">
 						<div class="solid-border">
 							<div class="row">
-								<span class="col-12 col-sm-6 cart__subtotal-title"><strong>Tổng
-										hóa đơn</strong></span> <span
+								<span class="col-12 col-sm-6 cart__subtotal-title"><strong><s:message
+											code="user.tonghoadon" /></strong></span> <span
 									class="col-12 col-sm-6 cart__subtotal-title cart__subtotal text-right"><span
 									class="money">{{cart.amount | number: 0}} $</span></span>
 							</div>
 							<form action="/order/checkout">
 								<input type="submit" id="cartCheckout"
-									class=" mt-3 btn btn--small-wide checkout" value="Thanh toán">
+									class=" mt-3 btn btn--small-wide checkout" value="<s:message
+											code="user.thanhtoan" />">
 							</form>
 							<div class="paymnet-img">
 								<img src="/assets/images/payment-img.jpg" alt="Payment">

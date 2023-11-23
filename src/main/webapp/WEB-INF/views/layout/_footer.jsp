@@ -20,11 +20,11 @@
                                     </li>
                                 </ul>
                                 <div class="footer-social">
-                                    <h4 class="h4"><s:message code="user.connectwithwe"/></h4>
+                                    <h4 class="h4"><s:message code="user.lienhevoichungtoi"/></h4>
                                     <ul class="list--inline site-footer__social-icons social-icons">
                                         <li><a class="social-icons__link" href="#" target="_blank"
                                                 title="Belle Multipurpose Bootstrap 4 Template on Facebook"><i
-                                                    class="icon icon-facebook"></i></a></li>
+                                                    class="icon icon-facebook">Facebook</i></a></li>
                                         <li><a class="social-icons__link" href="#" target="_blank"
                                                 title="Belle Multipurpose Bootstrap 4 Template on Twitter"><i
                                                     class="icon icon-twitter"></i> <span
@@ -44,23 +44,23 @@
                                 </div>
                             </div>
                             <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                                <h4 class="h4">Informations</h4>
+                                <h4 class="h4"><s:message code="user.thongtin"/></h4>
                                 <ul>
-                                    <li><a href="#"> <s:message code="user.aboutus"/></a></li>
-                                    <li><a href="#"> <s:message code="user.careers"/></a></li>
-                                    <li><a href="#"> <s:message code="user.privacypolicy"/></a></li>
-                                    <li><a href="#"><s:message code="user.termscondition"/>	</a></li>
-                                    <li><a href="#"><s:message code="user.myaccount"/>	</a></li>
+                                    <li><a href="#"> <s:message code="user.vechungtoi"/></a></li>
+                                    <li><a href="#"> <s:message code="user.nghenghiep"/></a></li>
+                                    <li><a href="#"> <s:message code="user.chinhsachbaomat"/></a></li>
+                                    <li><a href="#"><s:message code="user.dieukien"/> &amp; <s:message code="user.tinhtrang"/>	</a></li>
+                                    <li><a href="#"><s:message code="user.taikhoancuatoi"/>	</a></li>
                                 </ul>
                             </div>
                             <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                                <h4 class="h4"><s:message code="user.myaccount"/></h4>
+                                <h4 class="h4"><s:message code="user.dichvukhachhang"/></h4>
                                 <ul>
-                                    <li><a href="#"><s:message code="user.requestpersonaldata"/></a></li>
-                                    <li><a href="#"><s:message code="user.faqs"/></a></li>
-                                    <li><a href="#"><s:message code="user.contactUs"/></a></li>
-                                    <li><a href="#"><s:message code="user.orderandreturn"/></a></li>
-                                    <li><a href="#"><s:message code="user.supportcenter"/></a></li>
+                                    <li><a href="#"><s:message code="user.yeucaudulieucanhan"/></a></li>
+                                    <li><a href="#"><s:message code="user.cauhoithuonggap"/></a></li>
+                                    <li><a href="#"><s:message code="user.lienhevoichungtoi"/></a></li>
+                                    <li><a href="#"><s:message code="user.dondathangvatralai"/></a></li>
+                                    <li><a href="#"><s:message code="user.trungtamhotro"/></a></li>
                                 </ul>
                             </div>
                             
@@ -73,7 +73,7 @@
                             <!--Footer Copyright-->
                             <div
                                 class="col-12 col-sm-12 col-md-6 col-lg-6 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-sm-center text-md-left text-lg-left">
-                                <span></span> <a href="templateshub.net">Templates Hub</a>
+                                <span></span> <a href="templateshub.net"><s:message code="user.trungtammau"/></a>
                             </div>
                             <!--End Footer Copyright-->
                             <!--Footer Payment Icon-->

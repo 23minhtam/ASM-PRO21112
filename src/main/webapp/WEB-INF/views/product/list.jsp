@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -45,7 +46,8 @@
 				<div class="collection-hero">
 					<div class="collection-hero__image"></div>
 					<div class="collection-hero__title-wrapper">
-						<h1 class="collection-hero__title page-width">LIST PRODUCT</h1>
+						<h1 class="collection-hero__title page-width"><s:message
+						code="user.danhsachsanpham" /></h1>
 					</div>
 				</div>
 			</div>
@@ -54,8 +56,10 @@
 				<div class="bredcrumbWrap">
 					<div class="container breadcrumbs" role="navigation"
 						aria-label="breadcrumbs">
-						<a href="/" title="Back to the home page">Home</a><span
-							aria-hidden="true">›</span><span>List Product</span>
+						<a href="/" title="Back to the home page"><s:message
+						code="user.trangchu" /></a><span
+							aria-hidden="true">›</span><span><s:message
+						code="user.danhsachsanpham" /></span>
 					</div>
 				</div>
 				<!--End Breadcrumb-->
@@ -70,32 +74,30 @@
 							<!--Categories-->
 							<div class="sidebar_widget categories filter-widget">
 								<div class="widget-title">
-									<h2>Danh mục sản phẩm</h2>
-								</div>
-								<div class="widget-content">
-									<ul class="sidebar_categories">
-										<li class="lvl-1"><c:forEach var="c" items="${cates}">
-												<a href="/product/list?cid=${c.id}" class="site-nav">${c.name}</a>
-											</c:forEach></li>
-
-									</ul>
+									<h2><s:message
+						code="user.danhmucsanpham" /></h2>
 								</div>
 							</div>
 							<!--Categories-->
 							<!--Price Filter-->
 							<div class="sidebar_widget filterBox filter-widget">
 								<div class="widget-title">
-									<h2>Giá</h2>
+									<h2><s:message
+						code="user.gia" /></h2>
 								</div>
 								<form action="">
 									<button formaction="/product/list/price/under5000"
-										class="btn mb-2 btn--secondary">Dưới 5000$</button>
+										class="btn mb-2 btn--secondary"><s:message
+						code="user.duoi5000$" /></button>
 									<button formaction="/product/list/price/5000-10000"
-										class="btn mb-2 btn--secondary">Từ 5000$ - 10000$</button>
+										class="btn mb-2 btn--secondary"><s:message
+						code="user.tu5000$-10000$" /></button>
 									<button formaction="/product/list/price/10000-20000"
-										class="btn mb-2 btn--secondary">Từ 10000$ - 20000$</button>
+										class="btn mb-2 btn--secondary"><s:message
+						code="user.tu10000$-20000$" /></button>
 									<button formaction="/product/list/price/over20000"
-										class="btn mb-2 btn--secondary">Trên 20000$</button>
+										class="btn mb-2 btn--secondary"><s:message
+						code="user.tren20000$" /></button>
 								</form>
 							</div>
 							<!--End Price Filter-->
@@ -105,10 +107,10 @@
 								<div class="widget-title">
 									<h2>Thương Hiệu</h2>
 								</div>
-								<form action="/product/list/brand">
+								<form action="/product/list/?=bid">
 									<ul>
 										<c:forEach var="b" items="${brands}">
-											<li><input type="checkbox" name="bid" value="${b.id}"
+											<li><input type="checkbox"  value="${b.id}"
 												id="check1"> <label for="check1"><span><span></span></span>${b.name}</label>
 												<label for="check1"><span><span></span></span>${b.image}</label>
 											</li>
@@ -182,7 +184,8 @@
 												<form class="variants add" action="#" method="post">
 													<button ng-click="cart.add(${p.product.id})"
 														class="btn cartIcon btn-addto-cart" type="button"
-														tabindex="0">Add to cart
+														tabindex="0"><s:message
+						code="user.themvaogiohang" />
 													
 													</button>
 												</form>
