@@ -92,14 +92,14 @@
 									<div class="row">
 										<div class="form-group col-md-6 col-lg-6 col-xl-6 required">
 											<label for="input-firstname ">Username<span
-												class="required-f">*</span></label>
+												class="required-f">*</span></label><input>
 											<div id="username">${userDetail.username}</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="form-group col-md-6 col-lg-6 col-xl-6 required">
 											<label for="input-firstname">Fullname<span
-												class="required-f">*</span></label> <input disabled="disabled"
+												class="required-f">*</span></label> <input 
 												name="fullname" value="${userDetail.fullname}"
 												id="input-firstname" type="text">
 										</div>
