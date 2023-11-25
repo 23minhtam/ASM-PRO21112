@@ -44,8 +44,10 @@
 		<div class="page section-header text-center">
 			<div class="page-title">
 				<div class="wrapper">
+
 					<h1 class="page-width"><s:message
 						code="user.dangkitaikhoan" /></h1>
+
 				</div>
 			</div>
 		</div>
@@ -54,13 +56,16 @@
 				<div class="bredcrumbWrap">
 					<div class="container breadcrumbs" role="navigation"
 						aria-label="breadcrumbs">
+
 						<a href="/" title="Back to the home page"><s:message
 						code="user.trangchu" /></a><span
 							aria-hidden="true">›</span><span><s:message
 						code="user.dangki" /></span>
+
 					</div>
 				</div>
 				<!--End Breadcrumb-->
+
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-6 col-lg-6 main-col offset-md-3">
@@ -83,6 +88,7 @@
 							<div class="row">
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 									<div class="form-group">
+
 										<label for="FirstName"><s:message
 						code="user.tendangnhap" /></label> 
 										<form:input path="username" ng-model="username" name="username" required="required" placeholder=""
@@ -101,6 +107,7 @@
 										<div ng-show="frmregister.fullname.$invalid"
 											class="badge badge-danger m-2"><s:message
 						code="user.vuilongnhaphovaten" /></div>
+
 									</div>
 								</div>
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -110,12 +117,15 @@
 											id="CustomerEmail" class="" autocorrect="off"
 											autocapitalize="off" autofocus=""/>
 										<div ng-show="frmregister.email.$invalid"
+
 											class="badge badge-danger m-2"><s:message
 						code="user.vuilongnhapemail" /></div>
+
 									</div>
 								</div>
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 									<div class="form-group">
+
 										<label for="CustomerPassword"><s:message
 						code="user.matkhau" /></label> 
 										<form:password path="password" ng-model="password" value="" required="required"
@@ -123,29 +133,36 @@
 										<div ng-show="frmregister.password.$invalid"
 											class="badge badge-danger m-2"><s:message
 						code="user.vuilongnhapmatkhau" /></div>
+
 									</div>
 								</div>
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 									<div class="form-group">
+
 										<label for="CustomerPassword"><s:message
 						code="user.xacnhanmatkhau" /></label> 
+
 										<form:password path="" ng-model="password1" value=""
 											name="password1" required="required" placeholder=""
 											id="CustomerPassword" class=""/>
 										<div ng-show="frmregister.password1.$invalid"
+
 											class="badge badge-danger m-2"><s:message
 						code="user.vuilongnhapxacnhanmatkhau" /></div>
 										<div ng-show="password != password1"
 											class="badge badge-danger m-2"><s:message
 						code="user.xacnhanmatkhaukhongdung" /></div>
+
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
 									<button ng-disabled="frmregister.$invalid" type="submit"
+
 										class="btn mb-3"><s:message
 						code="user.taotaikhoan" /></button>
+
 								</div>
 							</div>
 						</form:form>

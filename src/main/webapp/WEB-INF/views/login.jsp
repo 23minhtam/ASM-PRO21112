@@ -42,20 +42,25 @@
 			<div class="page section-header text-center mt-5">
 				<div class="page-title">
 					<div class="wrapper">
+
 						<h1 class="page-width"><s:message
 						code="user.dangnhap" /></h1>
+
 					</div>
 				</div>
 			</div>
 			<!--End Page Title-->
 <!--Breadcrumb-->
+
 				<div class="bredcrumbWrap">
 					<div class="container breadcrumbs" role="navigation"
 						aria-label="breadcrumbs">
+
 						<a href="/" title="Back to the home page"><s:message
 						code="user.trangchu" /></a><span
 							aria-hidden="true">›</span><span><s:message
 						code="user.dangnhap" /></span>
+
 					</div>
 				</div>
 				<!--End Breadcrumb-->
@@ -70,8 +75,10 @@
 								<div class="row">
 									<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 										<div class="form-group">
+
 											<label for="CustomerEmail"><s:message
 						code="user.tendangnhap" /></label>
+
 											<input type="text" name="username" placeholder=""
 												id="CustomerEmail" class="" autocorrect="off"
 												autocapitalize="off" autofocus="">
@@ -79,16 +86,29 @@
 									</div>
 									<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 										<div class="form-group">
+
 											<label for="CustomerPassword"><s:message
 						code="user.matkhau" /></label>
+
 											<input type="password" value="" name="password" placeholder=""
 												id="CustomerPassword" class="">
 										</div>
 									</div>
+									<!-- #login.jsp
+user.dangnhap = Đăng nhập 
+user.home= Trang chủ
+user.login = Đăng nhập
+user.Username = Tên Tài Khoản
+user.password = Mật khẩu
+user.ghinho = Ghi nhớ tài khoản
+user.quenmatkhau = Quên mất khẩu
+user.taotaikhoan = Tạo tài khoản -->
 									<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 										<div class="form-group">
+
 											<label><s:message
 						code="user.ghinho" /></label>
+
 											<input type="checkbox" name="remember-me">
 										</div>
 									</div>
@@ -105,11 +125,13 @@
 										<input type="submit" class="btn mb-3" value="<s:message
 						code="user.dangnhap" />">
 										<p class="mb-4">
+
 											<a href="forgot-password" id="RecoverPassword"><s:message
 						code="user.quenmatkhau" />?</a>
 											&nbsp; | &nbsp; 
 											<a href="register" id="customer_register_link"><s:message
 						code="user.taotaikhoan" />?</a>
+
 										</p>
 									</div>
 								</div>

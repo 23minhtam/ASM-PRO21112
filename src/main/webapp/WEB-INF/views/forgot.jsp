@@ -44,13 +44,18 @@
 			<div class="page section-header text-center mt-5">
 				<div class="page-title">
 					<div class="wrapper">
+
 						<h1 class="page-width"><s:message
 						code="user.quenmatkhau" /></h1>
+
 					</div>
 				</div>
 			</div>
 			<!--End Page Title-->
-			
+			<!-- user.quenmatkhau = Forgot password
+user.username= Username
+user.login = Login
+user.taotaikhoan = Sign in -->
 			<div class="container">
 				<div class="row">
 					<div
@@ -62,8 +67,10 @@
 								<div class="row">
 									<div class="col-12 col-sm-12 col-md-12 col-lg-12">
 										<div class="form-group">
+
 											<label for="CustomerEmail"><s:message
 						code="user.tendangnhap" /></label> <input
+
 												type="text" name="username" placeholder=""
 												id="CustomerEmail" class="" autocorrect="off"
 												autocapitalize="off" autofocus="">
@@ -81,10 +88,12 @@
 									<div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
 										<input type="submit" class="btn mb-3" value="Đăng nhập">
 										<p class="mb-4">
+
 											<a href="/login" id="RecoverPassword"><s:message
 						code="user.dangnhap" /></a> &nbsp; |
 											&nbsp; <a href="register" id="customer_register_link"><s:message
 						code="user.taotaikhoan" />?</a>
+
 										</p>
 									</div>
 								</div>
