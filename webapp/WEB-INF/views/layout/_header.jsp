@@ -67,8 +67,8 @@
 				<!--Desktop Logo-->
 				<div class="logo col-md-2 col-lg-2 d-none d-lg-block">
 					<a style="text-decoration: none;" href="/"><h1
-							style="font-size: 20px; font-weight: 600; color: rgb(39, 39, 39);">Kim
-							Cương TxT</h1> </a>
+							style="font-size: 20px; font-weight: 600; color: rgb(39, 39, 39);"><s:message
+										code="user.EternalDiamonds" /></h1> </a>
 
 
 				</div>
