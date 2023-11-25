@@ -136,7 +136,8 @@
 									<div class="display-table shareRow">
 										<div class="display-table-cell medium-up--one-third">
 											<div class="wishlist-btn">
-												<a class="wishlist add-to-wishlist" ng-click="wishlist.add(${product.product.id})"
+											
+												<a class="btn wishlist add-to-wishlist" ng-click="wishlist.add(${product.product.id})"
 													title="Add to Wishlist"><i class="icon anm anm-heart-l"
 													aria-hidden="true"></i><span> <s:message
 						code="user.themvaosanphamyeuthich" /></span> </a>

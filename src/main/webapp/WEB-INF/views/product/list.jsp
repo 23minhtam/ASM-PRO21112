@@ -71,14 +71,7 @@
 							<i class="icon icon anm anm-times-l"></i>
 						</div>
 						<div class="sidebar_tags">
-							<!--Categories-->
-							<div class="sidebar_widget categories filter-widget">
-								<div class="widget-title">
-									<h2><s:message
-						code="user.danhmucsanpham" /></h2>
-								</div>
-							</div>
-							<!--Categories-->
+							
 							<!--Price Filter-->
 							<div class="sidebar_widget filterBox filter-widget">
 								<div class="widget-title">
@@ -102,24 +95,7 @@
 							</div>
 							<!--End Price Filter-->
 
-							<!--Brand-->
-							<div class="sidebar_widget filterBox filter-widget">
-								<div class="widget-title">
-									<h2>Thương Hiệu</h2>
-								</div>
-								<form action="/product/list/?=bid">
-									<ul>
-										<c:forEach var="b" items="${brands}">
-											<li><input type="checkbox"  value="${b.id}"
-												id="check1"> <label for="check1"><span><span></span></span>${b.name}</label>
-												<label for="check1"><span><span></span></span>${b.image}</label>
-											</li>
-										</c:forEach>
-									</ul>
-									<button class="btn mt-2">Lọc</button>
-								</form>
-							</div>
-							<!--End Brand-->
+							
 
 						</div>
 					</div>
@@ -131,34 +107,6 @@
 							<button type="button"
 								class="btn btn-filter d-block d-md-none d-lg-none">
 								Product Filters</button>
-							<form action="">
-								<div class="toolbar">
-									<div class="filters-toolbar-wrapper">
-										<div class="row">
-
-
-											<div class="col-4 col-md-4 col-lg-4 text-left">
-												<div class="filters-toolbar__item">
-													<label for="SortBy" class="hidden">Sort</label> <select
-														name="SortBy" id="SortBy"
-														class="filters-toolbar__input filters-toolbar__input--sort">
-														<option value="title-ascending" selected="selected">Sort</option>
-														<option>Bán chạy</option>
-														<option>A-Z</option>
-														<option>Z-A</option>
-														<option formaction="/product/list/price/thap">
-															Giá, thấp đến cao</option>
-														<option formaction="/product/list/sort/cao">Giá,
-															cao đến thấp</option>
-													</select> <input class="collection-header__default-sort"
-														type="hidden" value="manual">
-												</div>
-											</div>
-
-										</div>
-									</div>
-								</div>
-							</form>
 							<!--End Toolbar-->
 							<div class="grid-products grid--view-items">
 								<div class="row">
