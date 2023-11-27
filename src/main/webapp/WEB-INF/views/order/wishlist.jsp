@@ -39,21 +39,33 @@
 				<div class="bredcrumbWrap">
 					<div class="container breadcrumbs" role="navigation"
 						aria-label="breadcrumbs">
+
 						<a href="/" title="Back to the home page"><s:message
 						code="user.trangchu" /></a><span
 							aria-hidden="true">›</span><span><s:message
 						code="user.sanphamyeuthich" /></span>
+
 					</div>
 				</div>
 				<!--End Breadcrumb-->
 		<!--Body Content-->
+<!-- #wishlist
+user.home = Trang chủ
+user.wishlist = Danh sách mong muốn
+user.sanphamyeuthich = Sản phẩm yêu thích
+user.sanpham = Sản phẩm
+user.tieptucmuasam= Tiếp tục mua sắm
+user.capnhat = Cập nhật
+user.freeship= Miễn phí vận chuyển đơn hàng từ 10000$ nội thành TPHCM, ngoại thành chịu phí ship sẽ được cập nhật ở bước thanh toán -->
 		<div id="page-content">
 			<!--Page Title-->
 			<div class="page section-header text-center mt-5">
 				<div class="page-title">
 					<div class="wrapper">
+
 						<h1 class="page-width"><s:message
 						code="user.sanphamyeuthich" /></h1>
+
 					</div>
 				</div>
 			</div>
@@ -66,8 +78,10 @@
 							<table>
 								<thead class="wishlist__row wishlist__header">
 									<tr>
+
 										<th colspan="2" class="text-center"><s:message
 						code="user.sanpham" /></th>
+
 										<th class="action">&nbsp;</th>
 									</tr>
 								</thead>
@@ -92,6 +106,7 @@
 									<tr>
 										<td colspan="3" class="text-left"><a href="/product/list"
 											class="btn--link wishlist-continue"><i
+
 												class="icon icon-arrow-circle-left"></i> <s:message
 						code="user.tieptucmuasam" /></a></td>
 										<td colspan="3" class="text-right"><button
@@ -100,12 +115,15 @@
 												<i class="fa fa-refresh"></i> <s:message
 						code="user.capnhat" />
 											</button></td>
+
 									</tr>
 								</tfoot>
 							</table>
 
+
 							<div class="currencymsg"><s:message
 						code="user.a" /></div>
+
 							<hr>
 
 

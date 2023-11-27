@@ -44,7 +44,9 @@
                                 </div>
                             </div>
                             <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+
                                 <h4 class="h4"><s:message code="user.thongtin"/></h4>
+
                                 <ul>
                                     <li><a href="#"> <s:message code="user.vechungtoi"/></a></li>
                                     <li><a href="#"> <s:message code="user.nghenghiep"/></a></li>
