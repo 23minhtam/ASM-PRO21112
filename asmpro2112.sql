@@ -1,5 +1,5 @@
 ﻿create database asmpro2112
-GO
+go
 use asmpro2112
 go
 /****** Object:  Table [dbo].[Accounts]    Script Date: 6/18/2023 7:11:55 PM ******/
@@ -186,6 +186,32 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Comments](
+	[id] [INT],
+	[author] [nvarchar](255) not NULL,
+	[content] [varchar](MAX) not NULL,
+	[createDate] [date] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+
+INSERT [dbo].[Comments] ([id], [author], [content], [createdate]) VALUES 
+(N'1', N'phathung', N'aaaaaaaaaa', N'10-10-2002')
+
 INSERT [dbo].[Accounts] ([username], [password], [fullname], [email], [photo], [activated]) VALUES (N'vantrinh', N'123', N'Lê Văn Trình', N'vantrinh@gmail.com', N'cat.jpg', 1)
 INSERT [dbo].[Accounts] ([username], [password], [fullname], [email], [photo], [activated]) VALUES (N'minhtam', N'123', N'Võ Minh Tâm', N'minhtam@fpt.edu.vn', N'cat2.jpg', 1)
 INSERT [dbo].[Accounts] ([username], [password], [fullname], [email], [photo], [activated]) VALUES (N'hoanganh', N'123', N'Lê Xuân Hoàng ANh', N'hoanganh@gmail.com', N'dog.jpg', 1)

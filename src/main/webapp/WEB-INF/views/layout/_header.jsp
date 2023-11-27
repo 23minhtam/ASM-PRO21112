@@ -96,39 +96,15 @@
 
 							<li class="lvl1 parent megamenu"><a href="/"><s:message
 										code="user.trangchu" /> <i class="anm anm-angle-down-l"></i></a></li>
-							<li class="lvl1 parent megamenu"><a href=""><s:message
+							<li class="lvl1 parent megamenu"><a href="/product/list"><s:message
 										code="user.sanpham" /> <i class="anm anm-angle-down-l"></i>
 
 							</a>
-								<div class="megamenu style4">
-									<ul class="grid grid--uniform mmWrapper">
-										<li class="grid__item lvl-1 col-md-3 col-lg-3"><a
 
-											href="/product/list?kw=" class="site-nav lvl-1"><s:message
-													code="user.danhmucsanpham" /></a>
+								</li>
+							<li class="lvl1 parent megamenu"><a href="/product/list?=cid"> <s:message
+										code="user.thuonghieu" /> <i class="anm anm-angle-down-l"></i>
 
-											<ul class="subLinks">
-												<c:forEach var="item" items="${cates}" end="4">
-													<li class="lvl-2"><a
-														href="/product/list?cid=${item.id}" class="site-nav lvl-2">${item.name}</a>
-													</li>
-												</c:forEach>
-											</ul></li>
-										<li class="grid__item lvl-1 col-md-3 col-lg-3"><a
-											href="#" class="site-nav lvl-1"></a>
-											<ul class="subLinks">
-												<li class="lvl-2"><a href="#" class="site-nav lvl-2"></a>
-												</li>
-												<c:forEach var="cate" items="${cates }" begin="5">
-													<li class="lvl-2"><a
-														href="/product/list?cid=${cate.id}" class="site-nav lvl-2">${cate.name}</a>
-													</li>
-												</c:forEach>
-											</ul></li>
-									</ul>
-								</div></li>
-
-							<li class="lvl1 parent megamenu"><a href="/brand/list"> <s:message code="user.thuonghieu" /> <i class="anm anm-angle-down-l"></i>
 							</a></li>
 
 							<li class="lvl1"><a href="#"><b> <s:message

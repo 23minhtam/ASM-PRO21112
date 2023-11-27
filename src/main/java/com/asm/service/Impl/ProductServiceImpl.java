@@ -34,7 +34,7 @@ public class ProductServiceImpl implements ProductService {
 	ProductCategoryRepo pcRepo;
 	@Autowired
 	SessionService session;
-
+	
 	@Override
 	public List<Product> findAll() {
 		return pRepo.findAll();
@@ -151,7 +151,7 @@ public class ProductServiceImpl implements ProductService {
 	public Page<Product> searchProductByName(Optional<String> kw, Optional<Integer> p) {
 		String keyword = kw.orElse(session.getValue("keyword", ""));
 		session.set("keyword", keyword);
-		Pageable pageable = PageRequest.of(p.orElse(0), 12);
+		Pageable pageable = PageRequest.of(p.orElse(0), 40);
 		return pRepo.findByKeyword("%" + keyword + "%", pageable);
 	}
 
@@ -159,29 +159,39 @@ public class ProductServiceImpl implements ProductService {
 	public Page<Product> findProductByBrand(Optional<String> bid, Optional<Integer> p) {
 		String brandId = bid.orElse(session.getValue("brandId", ""));
 		session.set("brandId", brandId);
-		Pageable pageable = PageRequest.of(p.orElse(0), 12);
+		Pageable pageable = PageRequest.of(p.orElse(0), 40);
 		return pRepo.findByBrand(brandId, pageable);
 	}
-
+	
+	@Override
+	public Page<Product> findProductsSortedByPriceAsc(Optional<Integer> p) {
+	    Pageable pageable = PageRequest.of(p.orElse(0), 40);
+	    return pRepo.findByOrderByPriceAsc(pageable);
+	}
+	@Override
+    public Page<Product> findProductByPriceDesc(Optional<Integer> p) {
+        Pageable pageable = PageRequest.of(p.orElse(0), 40);
+        return pRepo.findByPriceDesc(pageable);
+    }
 	@Override
 	public Page<Product> findProductByCategory(Optional<String> cid, Optional<Integer> p) {
 		String categoryId = cid.orElse(session.getValue("categoryId", ""));
 		session.set("categoryId", categoryId);
-		Pageable pageable = PageRequest.of(p.orElse(0), 12);
+		Pageable pageable = PageRequest.of(p.orElse(0), 40);
 		return pRepo.findByCategory(categoryId, pageable);
 	}
 
 	@Override
 	public Page<Product> findProductByListBrand(List<String> bid, Optional<Integer> p) {
 		session.set("lstBrandId", bid);
-		Pageable pageable = PageRequest.of(p.orElse(0), 12);
+		Pageable pageable = PageRequest.of(p.orElse(0), 40);
 		return pRepo.findByListBrand(bid, pageable);
 	}
 
 	@Override
 	public Page<Product> findProductLessThanPrice(Double price, Optional<Integer> p) {
 		session.set("price", price);
-		Pageable pageable = PageRequest.of(p.orElse(0), 12);
+		Pageable pageable = PageRequest.of(p.orElse(0), 40);
 		return pRepo.findByPriceLessThanEqual(price, pageable);
 	}
 
@@ -189,14 +199,14 @@ public class ProductServiceImpl implements ProductService {
 	public Page<Product> findProductBetweenPrice(Double min, Double max, Optional<Integer> p) {
 		session.set("minPrice", min);
 		session.set("maxPrice", max);
-		Pageable pageable = PageRequest.of(p.orElse(0), 12);
+		Pageable pageable = PageRequest.of(p.orElse(0), 40);
 		return pRepo.findByPriceBetween(min, max, pageable);
 	}
 
 	@Override
 	public Page<Product> findByPriceGreaterThanEqual(Double price, Optional<Integer> p) {
 		session.set("price", price);
-		Pageable pageable = PageRequest.of(p.orElse(0), 12);
+		Pageable pageable = PageRequest.of(p.orElse(0), 40);
 		return pRepo.findByPriceGreaterThanEqual(price, pageable);
 	}
 
