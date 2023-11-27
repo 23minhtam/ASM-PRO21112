@@ -1661,3 +1661,23 @@ body.home15-funiture-template { font-size:14px; }
 
 .blur-up.lazyloaded { -webkit-filter:blur(0); filter:blur(0); }
 .blur-up { -webkit-filter:blur(5px); filter:blur(5px); transition:filter 400ms, -webkit-filter 400ms; -webkit-transition:filter 400ms, -webkit-filter 400ms; }
+
+.price-label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.price-select {
+    width: 200px; /* Điều chỉnh chiều rộng của dropdown theo ý của bạn */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Tùy chỉnh màu sắc khi hover và focus */
+.price-select:hover,
+.price-select:focus {
+    border-color:#000000;
+}

@@ -36,33 +36,33 @@
 	</div>
 	<div class="pageWrapper">
 		<%@include file="../layout/_header.jsp"%>
-		
+
 		<!--Body Content-->
-		
+
 		<div id="page-content">
-		
+
 			<!--Collection Banner-->
 			<div class="collection-header">
 				<div class="collection-hero">
 					<div class="collection-hero__image"></div>
 					<div class="collection-hero__title-wrapper">
-						<h1 class="collection-hero__title page-width"><s:message
-						code="user.danhsachsanpham" /></h1>
+						<h1 class="collection-hero__title page-width">
+							<s:message code="user.danhsachsanpham" />
+						</h1>
 					</div>
 				</div>
 			</div>
 			<!--End Collection Banner-->
 			<!--Breadcrumb-->
-				<div class="bredcrumbWrap">
-					<div class="container breadcrumbs" role="navigation"
-						aria-label="breadcrumbs">
-						<a href="/" title="Back to the home page"><s:message
-						code="user.trangchu" /></a><span
-							aria-hidden="true">›</span><span><s:message
-						code="user.danhsachsanpham" /></span>
-					</div>
+			<div class="bredcrumbWrap">
+				<div class="container breadcrumbs" role="navigation"
+					aria-label="breadcrumbs">
+					<a href="/" title="Back to the home page"><s:message
+							code="user.trangchu" /></a><span aria-hidden="true">›</span><span><s:message
+							code="user.danhsachsanpham" /></span>
 				</div>
-				<!--End Breadcrumb-->
+			</div>
+			<!--End Breadcrumb-->
 			<div class="container mt-5">
 				<div class="row">
 					<!--Sidebar-->
@@ -71,31 +71,22 @@
 							<i class="icon icon anm anm-times-l"></i>
 						</div>
 						<div class="sidebar_tags">
-							
+
 							<!--Price Filter-->
-							<div class="sidebar_widget filterBox filter-widget">
-								<div class="widget-title">
-									<h2><s:message
-						code="user.gia" /></h2>
-								</div>
-								<form action="">
-									<button formaction="/product/list/price/under5000"
-										class="btn mb-2 btn--secondary"><s:message
-						code="user.duoi5000$" /></button>
-									<button formaction="/product/list/price/5000-10000"
-										class="btn mb-2 btn--secondary"><s:message
-						code="user.tu5000$-10000$" /></button>
-									<button formaction="/product/list/price/10000-20000"
-										class="btn mb-2 btn--secondary"><s:message
-						code="user.tu10000$-20000$" /></button>
-									<button formaction="/product/list/price/over20000"
-										class="btn mb-2 btn--secondary"><s:message
-						code="user.tren20000$" /></button>
-								</form>
-							</div>
+							<label class="price-label"><s:message code="user.gia" /></label>
+<select class="form-select price-select" aria-label="Default select example" onchange="redirectOnChange(this)">
+    <option value=""></option>
+    <option value="1"><s:message code="user.duoi5000$"/></option>
+    <option value="2"><s:message code="user.tu5000$-10000$"/></option>
+    <option value="3"><s:message code="user.tu10000$-20000$"/></option>
+    <option value="4"><s:message code="user.tren20000$"/></option>
+    <option value="5"><s:message code="user.tuthapdencao"/></option>
+    <option value="6"><s:message code="user.tucaodenthap" /></option>
+</select>
+
 							<!--End Price Filter-->
 
-							
+
 
 						</div>
 					</div>
@@ -103,11 +94,7 @@
 					<!--Main Content-->
 					<div class="col-12 col-sm-12 col-md-9 col-lg-9 main-col">
 						<div class="productList">
-							<!--Toolbar-->
-							<button type="button"
-								class="btn btn-filter d-block d-md-none d-lg-none">
-								Product Filters</button>
-							<!--End Toolbar-->
+
 							<div class="grid-products grid--view-items">
 								<div class="row">
 									<c:forEach var="p" items="${products}">
@@ -129,26 +116,23 @@
 												<!-- end product image -->
 
 												<!-- Start product button -->
-												<form class="variants add" action="#" method="post">
+												<form class="variants add">
 													<button ng-click="cart.add(${p.product.id})"
-														class="btn cartIcon btn-addto-cart" type="button"
-														tabindex="0"><s:message
-						code="user.themvaogiohang" />
-													
+														class="btn btn-addto-cart" type="button">
+														<s:message code="user.themvaogiohang" />
 													</button>
 												</form>
-												<c:if test="${not empty sessionScope.user }">
-													<div class="button-set variants add">
+												<div class="button-set">
 
-														<div class="wishlist-btn">
-															<a class="wishlist add-to-wishlist"
-																ng-click="wishlist.add(${p.product.id})"> <i
-																class="icon anm anm-heart-l"></i>
-															</a>
-														</div>
-
+													<div class="wishlist-btn">
+														<a class="btn wishlist add-to-wishlist"
+															ng-click="wishlist.add(${p.product.id})"
+															title="Add to Wishlist"> <i
+															class="icon anm anm-heart-l"></i>
+														</a>
 													</div>
-												</c:if>
+
+												</div>
 												<!-- end product button -->
 											</div>
 											<!-- end product image -->
@@ -179,63 +163,89 @@
 									</c:forEach>
 								</div>
 							</div>
+							<hr class="clear">
+							<div class="pagination">
+								<ul>
+									<li class="active mr-2"><a href="/product/list?p=0">|<</a></li>
+									<li class="active mr-2"><a
+										href="/product/list?p=${page.number-1}"><<</a></li>
+									<li class="active mr-2"><a
+										href="/product/list?p=${page.number+1}">>></a></li>
+									<li class="active mr-2"><a
+										href="/product/list?p=${page.totalPages-1}">>|</a></li>
+								</ul>
+							</div>
 						</div>
-						<hr class="clear">
-						<div class="pagination">
-							<ul>
-								<li class="active mr-2"><a href="/product/list?p=0">|<</a></li>
-								<li class="active mr-2"><a
-									href="/product/list?p=${page.number-1}"><<</a></li>
-								<li class="active mr-2"><a
-									href="/product/list?p=${page.number+1}">>></a></li>
-								<li class="active mr-2"><a
-									href="/product/list?p=${page.totalPages-1}">>|</a></li>
-							</ul>
-						</div>
+						<!--End Main Content-->
 					</div>
-					<!--End Main Content-->
 				</div>
+
 			</div>
+			<!--End Body Content-->
 
+			<!--Footer-->
+			<%@include file="../layout/_footer.jsp"%>
+			<!--End Footer-->
+
+			<!--Scoll Top-->
+			<span id="site-scroll"><i class="icon anm anm-angle-up-r"></i></span>
+			<!--End Scoll Top-->
+
+			<!-- Including Jquery -->
+			<script src="/assets/js/vendor/jquery-3.3.1.min.js"></script>
+			<script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+			<script src="/assets/js/vendor/jquery.cookie.js"></script>
+			<script src="/assets/js/vendor/wow.min.js"></script>
+			<!-- Incing Jascript -->
+			<script src="/assets/js/bootstrap.min.js"></script>
+			<script src="/assets/js/plugins.js"></script>
+			<script src="/assets/js/popper.min.js"></script>
+			<script src="/assets/js/lazysizes.js"></script>
+			<script src="/assets/js/main.js"></script>
+			<!-- Shopping cart -->
+			<script src="/assets/js/shopping-cart.js"></script>
+			<!--For Newsletter Popup-->
+			<script>
+				jQuery(document).mouseup(
+						function(e) {
+							var container = jQuery('#popup-container');
+							if (!container.is(e.target)
+									&& container.has(e.target).length === 0) {
+								container.fadeOut();
+								jQuery('#modalOverly').fadeIn(200);
+								jQuery('#modalOverly').hide();
+							}
+						});
+			</script>
+			<script>
+				function redirectOnChange(selectElement) {
+					var selectedValue = selectElement.value;
+					switch (selectedValue) {
+					case "1":
+						window.location.href = "/product/list/price/under5000";
+						break;
+					case "2":
+						window.location.href = "/product/list/price/5000-10000";
+						break;
+					case "3":
+						window.location.href = "/product/list/price/10000-20000";
+						break;
+					case "4":
+						window.location.href = "/product/list/price/over20000";
+						break;
+					case "5":
+						window.location.href = "/product/sortedByPrice";
+						break;
+					case "6":
+						window.location.href = "/product/list/price-desc";
+						break;
+					default:
+						// Handle default case or do nothing
+					}
+				}
+			</script>
+			<!--End For Newsletter Popup-->
 		</div>
-		<!--End Body Content-->
-
-		<!--Footer-->
-		<%@include file="../layout/_footer.jsp"%>
-		<!--End Footer-->
-
-		<!--Scoll Top-->
-		<span id="site-scroll"><i class="icon anm anm-angle-up-r"></i></span>
-		<!--End Scoll Top-->
-
-		<!-- Including Jquery -->
-		<script src="/assets/js/vendor/jquery-3.3.1.min.js"></script>
-		<script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
-		<script src="/assets/js/vendor/jquery.cookie.js"></script>
-		<script src="/assets/js/vendor/wow.min.js"></script>
-		<!-- Incing Jascript -->
-		<script src="/assets/js/bootstrap.min.js"></script>
-		<script src="/assets/js/plugins.js"></script>
-		<script src="/assets/js/popper.min.js"></script>
-		<script src="/assets/js/lazysizes.js"></script>
-		<script src="/assets/js/main.js"></script>
-		<!-- Shopping cart -->
-		<script src="/assets/js/shopping-cart.js"></script>
-		<!--For Newsletter Popup-->
-		<script>
-			jQuery(document).mouseup(
-					function(e) {
-						var container = jQuery('#popup-container');
-						if (!container.is(e.target)
-								&& container.has(e.target).length === 0) {
-							container.fadeOut();
-							jQuery('#modalOverly').fadeIn(200);
-							jQuery('#modalOverly').hide();
-						}
-					});
-		</script>
-		<!--End For Newsletter Popup-->
-	</div>
 </body>
 
 
