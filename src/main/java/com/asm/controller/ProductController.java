@@ -13,14 +13,19 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.asm.bean.Brand;
+import com.asm.bean.Comment;
 import com.asm.bean.Product;
 import com.asm.bean.ProductCategory;
 import com.asm.service.BrandService;
 import com.asm.service.CategoryService;
+import com.asm.service.CommentService;
 import com.asm.service.ProductService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -36,7 +41,8 @@ public class ProductController {
 	CategoryService cService;
 	@Autowired
 	ProductService pService;
-
+	
+	
 	@RequestMapping("/list")
 	public String home(Model model, @RequestParam("kw") Optional<String> kw, @RequestParam("cid") Optional<String> cid,
 			@RequestParam("bid") Optional<String> bid, @RequestParam("p") Optional<Integer> p) {
@@ -59,7 +65,11 @@ public class ProductController {
 		return "product/list";
 	}
 
-	@GetMapping("/brand")
+	
+	@GetMapping("/brand/list")
+	public String register(@ModelAttribute Brand brand) {
+		return "/brand/list";
+	}
 	public String filterByListBrand(Model model, @RequestParam("bid") List<String> bid,
 			@RequestParam("p") Optional<Integer> p) {
 		Page<Product> lstProduct = pService.findProductByListBrand(bid, p);
@@ -69,24 +79,25 @@ public class ProductController {
 		return "product/list";
 	}
 	
+
 	@GetMapping("/sortedByPrice")
 	public String getProductsSortedByPrice(Model model, @RequestParam("p") Optional<Integer> p) {
-	    Page<Product> lstProduct = pService.findProductsSortedByPriceAsc(p);
-	    List<Map<String, Object>> products = pService.listProductSearch(lstProduct);
-	    model.addAttribute("page", lstProduct);
-	    model.addAttribute("products", products);
-	    return "product/list";
+		Page<Product> lstProduct = pService.findProductsSortedByPriceAsc(p);
+		List<Map<String, Object>> products = pService.listProductSearch(lstProduct);
+		model.addAttribute("page", lstProduct);
+		model.addAttribute("products", products);
+		return "product/list";
 	}
 
 	@GetMapping("/list/price-desc")
-    public String sortByPriceDesc(Model model, @RequestParam("p") Optional<Integer> p) {
-        Page<Product> lstProduct = pService.findProductByPriceDesc(p);
-        List<Map<String, Object>> products = pService.listProductSearch(lstProduct);
-        model.addAttribute("page", lstProduct);
-        model.addAttribute("products", products);
-        return "product/list";
-    }
-	
+	public String sortByPriceDesc(Model model, @RequestParam("p") Optional<Integer> p) {
+		Page<Product> lstProduct = pService.findProductByPriceDesc(p);
+		List<Map<String, Object>> products = pService.listProductSearch(lstProduct);
+		model.addAttribute("page", lstProduct);
+		model.addAttribute("products", products);
+		return "product/list";
+	}
+
 	@GetMapping("/list/price/{price}")
 	public String filterByPrice(Model model, @PathVariable("price") String price,
 			@RequestParam("p") Optional<Integer> p) {
@@ -136,4 +147,12 @@ public class ProductController {
 		model.addAttribute("productsRcm", products);
 		return "product/product-detail";
 	}
+	@RequestMapping("/list/createdate-desc")
+	public String sortByCreateDateDesc(Model model) {
+	    List<Map<String, Object>> products = pService.findProductByCreateDateDESC();
+	    model.addAttribute("products", products);
+	    return "product/list";
+	}
+	
+	
 }

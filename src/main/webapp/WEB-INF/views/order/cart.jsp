@@ -160,9 +160,9 @@
 									class=" mt-3 btn btn--small-wide checkout" value="<s:message
 											code="user.thanhtoan" />">
 							</form>
-							<div class="paymnet-img">
+							<!-- <div class="paymnet-img">
 								<img src="/assets/images/payment-img.jpg" alt="Payment">
-							</div>
+							</div> -->
 						</div>
 
 					</div>
