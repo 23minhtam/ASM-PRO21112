@@ -1,5 +1,6 @@
 ﻿create database asmpro2112
 go
+
 use asmpro2112
 go
 /****** Object:  Table [dbo].[Accounts]    Script Date: 6/18/2023 7:11:55 PM ******/
@@ -195,13 +196,12 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Comments](
-	[id] [INT],
-	[author] [nvarchar](255) not NULL,
-	[content] [varchar](MAX) not NULL,
-	[createDate] [date] NULL,
+	[username] [nvarchar](50) NOT NULL,
+    content NVARCHAR(MAX),
+    createdAt DATETIME,
 PRIMARY KEY CLUSTERED 
 (
-	[id] ASC
+	[username] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
@@ -209,8 +209,10 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-INSERT [dbo].[Comments] ([id], [author], [content], [createdate]) VALUES 
-(N'1', N'phathung', N'aaaaaaaaaa', N'10-10-2002')
+INSERT [dbo].[Comments] ([username], [content], [createdAt]) VALUES 
+(N'phathung', N'aaaaaaaaaa', N'10-10-2002')
+
+select * from Comments
 
 INSERT [dbo].[Accounts] ([username], [password], [fullname], [email], [photo], [activated]) VALUES (N'vantrinh', N'123', N'Lê Văn Trình', N'vantrinh@gmail.com', N'cat.jpg', 1)
 INSERT [dbo].[Accounts] ([username], [password], [fullname], [email], [photo], [activated]) VALUES (N'minhtam', N'123', N'Võ Minh Tâm', N'minhtam@fpt.edu.vn', N'cat2.jpg', 1)
@@ -344,6 +346,9 @@ REFERENCES [dbo].[Products] ([id])
 GO
 ALTER TABLE [dbo].[Orders]  WITH CHECK ADD FOREIGN KEY([username])
 REFERENCES [dbo].[Accounts] ([username])
+GO
+ALTER TABLE [dbo].[Accounts]  WITH CHECK ADD FOREIGN KEY([username])
+REFERENCES [dbo].[Comments] ([username])
 GO
 ALTER TABLE [dbo].[ProductCategory]  WITH CHECK ADD FOREIGN KEY([categoryId])
 REFERENCES [dbo].[Categories] ([id])

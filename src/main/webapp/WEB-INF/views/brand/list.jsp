@@ -82,6 +82,7 @@
     <option value="4"><s:message code="user.tren20000$"/></option>
     <option value="5"><s:message code="user.tuthapdencao"/></option>
     <option value="6"><s:message code="user.tucaodenthap" /></option>
+    <option value="7">Ngày tạo</option>
 </select>
 
 							<!--End Price Filter-->
@@ -238,6 +239,9 @@
 						break;
 					case "6":
 						window.location.href = "/product/list/price-desc";
+						break;
+					case "7":
+						window.location.href = "/product/list/createdate-desc";
 						break;
 					default:
 						// Handle default case or do nothing

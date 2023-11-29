@@ -272,18 +272,18 @@
 								</c:forEach>
 							</div>
 						</div>
-						<div style="width: 800px; height: 150px; margin: auto; border: 1px solid rgb(246, 246, 246);" class="comment-section">
+						<div style="width: 800px; height: 150px; margin: auto; border: 1px solid rgb(246, 246, 246);" class="comment">
     <h5 style="padding-left: 20px; margin: 0; position: relative; top: 10px; color: #000000; font-weight: 600;">Bình Luận</h5>
-    <div style="padding: 20px;" class="comment-input">
-        <form action="/api/comments" method="post">
-            <input type="text" name="content" placeholder="Gửi đánh giá của bạn vào đây">
-            <button style="cursor: pointer; width: 100px; height: 40px; background: #ff708e; color: aliceblue;" type="submit">Bình Luận</button>
-        </form>
-    </div>
+    <form action="/comment" method="post" style="padding: 20px;" class="commentip">
+    <input type="text" name="username" placeholder="Your Username">
+    <input type="text" name="content" placeholder="Gửi đánh giá của bạn vào đây">
+    <button style="cursor: pointer; width: 100px; height: 40px; background: #ff708e; color: aliceblue;" type="submit">Bình Luận</button>
+</form>
+</div>
     <div style="padding: 20px;" class="comments-list">
         <c:forEach var="comment" items="${comments}">
             <div>
-                <strong>${comment.author}</strong> - ${comment.content} - ${comment.createDate}
+                <strong>${comment.username}</strong> - ${comment.content} - ${comment.createdAt}
             </div>
         </c:forEach>
     </div>

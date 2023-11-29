@@ -1,3 +1,12 @@
+function togglePassword() {
+        var passwordInput = document.getElementById("CustomerPassword");
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+    }
+
 var app = angular.module("shopping-app",[]);
 app.controller("shopping-ctrl", function($scope, $http){
 	

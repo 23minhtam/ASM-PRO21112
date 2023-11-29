@@ -1,20 +1,45 @@
 package com.asm.bean;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
-@Table(name = "comments")
+@Table(name = "Comments")
 public class Comment {
-
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    private String username; 
 
-	private String content;
+    @Column(columnDefinition = "NVARCHAR(MAX)")
+    private String content;
 
-	@Column(name = "created_at")
-	private LocalDateTime createdAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdAt;
 
-	// Constructors, getters, setters, etc.
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+    // Add other necessary fields, e.g., User, Product, etc.
+
+    
 }

@@ -172,6 +172,13 @@ a:hover{
 .btn:hover{
 	background-position: right;
 }
+.remember-me{
+	margin-right: 250px;
+	
+}
+.remember-me.label{
+	color: #555
+}
 
 
 

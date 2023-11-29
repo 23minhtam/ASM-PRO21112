@@ -93,7 +93,7 @@
 										code="user.sanpham" /> <i class="anm anm-angle-down-l"></i>
 							</a>
 								</li>
-							<li class="lvl1 parent megamenu"><a href="/product/list?=cid"> <s:message
+							<li class="lvl1 parent megamenu"><a href="brand/list"> <s:message
 										code="user.thuonghieu" /> <i class="anm anm-angle-down-l"></i>
 							</a></li>
 							<li class="lvl1"><a href="#"><b> <s:message
