@@ -66,7 +66,7 @@
 						<div class="row">
 							<c:forEach var="d" items="${db}" end="14">
 								<div
-									class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
+									class="col-6 col-sm-6 col-md-4 col-lg-3 item grid-view-item style2">
 									<div class="grid-view_image">
 
 										<!-- start product image -->

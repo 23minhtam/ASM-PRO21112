@@ -25,18 +25,10 @@
 	<div class="top-header">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-3">
-					<div class="language-dropdown">
-						<a class="language-dd" href="?lang=us">English</a> <a
-							class="language-dd" href="?lang=vi">Việt Nam</a>
-					</div>
-					<p class="phone-no">
-						<i class="anm anm-phone-s"></i> +8999999999
-					</p>
-				</div>
+				
 				<div class="col-md-1 d-none d-lg-none d-md-block d-lg-block">
 				</div>
-				<div class="col-md-8 text-right">
+				<div class="col-md-8 ">
 					<span class="user-menu d-block d-lg-none"><i
 						class="anm anm-user-al" aria-hidden="true"></i></span>
 					<ul class="customer-links list-inline">
@@ -56,6 +48,16 @@
 							<li><a href="/admin"><s:message code="user.admin" /></a></li>
 						</c:if>
 					</ul>
+				</div>
+
+				<div class="col-md-3 text-right">
+					<div class="language-dropdown">
+						<a class="language-dd" href="?lang=us">English</a> <a
+							class="language-dd" href="?lang=vi">Việt Nam</a>
+					</div>
+					<!-- <p class="phone-no">
+						<i class="anm anm-phone-s"></i> +8999999999
+					</p> -->
 				</div>
 			</div>
 		</div>
