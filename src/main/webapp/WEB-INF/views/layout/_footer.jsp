@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <footer id="footer" class="footer-5">
             <div class="site-footer">
                 <div class="container">

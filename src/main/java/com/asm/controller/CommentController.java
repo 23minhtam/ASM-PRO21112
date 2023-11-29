@@ -11,16 +11,16 @@ import java.util.List;
 @RequestMapping("/api/comments")
 public class CommentController {
 
-    @Autowired
-    private CommentService commentService;
+	@Autowired
+	private CommentService commentService;
 
-    @GetMapping
-    public List<Comment> getAllComments() {
-        return commentService.getAllComments();
-    }
+	@GetMapping
+	public List<Comment> getAllComments() {
+		return commentService.getAllComments();
+	}
 
-    @PostMapping
-    public Comment addComment(@RequestBody Comment comment) {
-        return commentService.addComment(comment);
-    }
+	@PostMapping
+	public Comment addComment(@RequestBody Comment comment) {
+		return commentService.addComment(comment);
+	}
 }

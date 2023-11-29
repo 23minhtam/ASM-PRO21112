@@ -68,25 +68,25 @@ public class ProductController {
 		model.addAttribute("products", products);
 		return "product/list";
 	}
-	
+
 	@GetMapping("/sortedByPrice")
 	public String getProductsSortedByPrice(Model model, @RequestParam("p") Optional<Integer> p) {
-	    Page<Product> lstProduct = pService.findProductsSortedByPriceAsc(p);
-	    List<Map<String, Object>> products = pService.listProductSearch(lstProduct);
-	    model.addAttribute("page", lstProduct);
-	    model.addAttribute("products", products);
-	    return "product/list";
+		Page<Product> lstProduct = pService.findProductsSortedByPriceAsc(p);
+		List<Map<String, Object>> products = pService.listProductSearch(lstProduct);
+		model.addAttribute("page", lstProduct);
+		model.addAttribute("products", products);
+		return "product/list";
 	}
 
 	@GetMapping("/list/price-desc")
-    public String sortByPriceDesc(Model model, @RequestParam("p") Optional<Integer> p) {
-        Page<Product> lstProduct = pService.findProductByPriceDesc(p);
-        List<Map<String, Object>> products = pService.listProductSearch(lstProduct);
-        model.addAttribute("page", lstProduct);
-        model.addAttribute("products", products);
-        return "product/list";
-    }
-	
+	public String sortByPriceDesc(Model model, @RequestParam("p") Optional<Integer> p) {
+		Page<Product> lstProduct = pService.findProductByPriceDesc(p);
+		List<Map<String, Object>> products = pService.listProductSearch(lstProduct);
+		model.addAttribute("page", lstProduct);
+		model.addAttribute("products", products);
+		return "product/list";
+	}
+
 	@GetMapping("/list/price/{price}")
 	public String filterByPrice(Model model, @PathVariable("price") String price,
 			@RequestParam("p") Optional<Integer> p) {
@@ -136,4 +136,11 @@ public class ProductController {
 		model.addAttribute("productsRcm", products);
 		return "product/product-detail";
 	}
+	@RequestMapping("/list/createdate-desc")
+	public String sortByCreateDateDesc(Model model) {
+	    List<Map<String, Object>> products = pService.findProductByCreateDateDESC();
+	    model.addAttribute("products", products);
+	    return "product/list";
+	}
+
 }

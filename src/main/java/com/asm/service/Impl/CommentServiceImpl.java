@@ -13,17 +13,17 @@ import java.util.List;
 @Service
 public class CommentServiceImpl implements CommentService {
 
-    @Autowired
-    private CommentRepo commentRepo;
+	@Autowired
+	private CommentRepo commentRepo;
 
-    @Override
-    public List<Comment> getAllComments() {
-        return commentRepo.findAll();
-    }
+	@Override
+	public List<Comment> getAllComments() {
+		return commentRepo.findAll();
+	}
 
-    @Override
-    public Comment addComment(Comment comment) {
-        comment.getCreateDate();
-        return commentRepo.save(comment);
-    }
+	@Override
+	public Comment addComment(Comment comment) {
+		comment.getCreateDate();
+		return commentRepo.save(comment);
+	}
 }

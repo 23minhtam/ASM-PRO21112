@@ -68,7 +68,7 @@
 												alt="" src="/images/product/${product.images[0]}" />
 										</div>
 										<div class="product-buttons">
-											<a href="#" class="btn prlightbox" title="Zoom"><i
+											<a href="" class="btn prlightbox" title="Zoom"><i
 												class="icon anm anm-expand-l-arrows" aria-hidden="true"></i></a>
 										</div>
 									</div>
@@ -97,7 +97,7 @@
 								<div class="product-single__meta">
 									<h1 class="product-single__title">${product.product.name}</h1>
 									<div class="product-nav clearfix">
-										<a href="#" class="next" title="Next"><i
+										<a href="/product/detail/${product.product.id+1}" class="next" title="Next"><i
 											class="fa fa-angle-right" aria-hidden="true"></i></a>
 									</div>
 									
@@ -275,7 +275,7 @@
 						<div style="width: 800px; height: 150px; margin: auto; border: 1px solid rgb(246, 246, 246);" class="comment-section">
     <h5 style="padding-left: 20px; margin: 0; position: relative; top: 10px; color: #000000; font-weight: 600;">Bình Luận</h5>
     <div style="padding: 20px;" class="comment-input">
-        <form action="${pageContext.request.contextPath}/api/comments" method="post">
+        <form action="/api/comments" method="post">
             <input type="text" name="content" placeholder="Gửi đánh giá của bạn vào đây">
             <button style="cursor: pointer; width: 100px; height: 40px; background: #ff708e; color: aliceblue;" type="submit">Bình Luận</button>
         </form>

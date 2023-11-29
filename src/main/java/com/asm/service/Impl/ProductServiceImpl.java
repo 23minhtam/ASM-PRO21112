@@ -34,7 +34,7 @@ public class ProductServiceImpl implements ProductService {
 	ProductCategoryRepo pcRepo;
 	@Autowired
 	SessionService session;
-	
+
 	@Override
 	public List<Product> findAll() {
 		return pRepo.findAll();
@@ -162,17 +162,19 @@ public class ProductServiceImpl implements ProductService {
 		Pageable pageable = PageRequest.of(p.orElse(0), 40);
 		return pRepo.findByBrand(brandId, pageable);
 	}
-	
+
 	@Override
 	public Page<Product> findProductsSortedByPriceAsc(Optional<Integer> p) {
-	    Pageable pageable = PageRequest.of(p.orElse(0), 40);
-	    return pRepo.findByOrderByPriceAsc(pageable);
+		Pageable pageable = PageRequest.of(p.orElse(0), 40);
+		return pRepo.findByOrderByPriceAsc(pageable);
 	}
+
 	@Override
-    public Page<Product> findProductByPriceDesc(Optional<Integer> p) {
-        Pageable pageable = PageRequest.of(p.orElse(0), 40);
-        return pRepo.findByPriceDesc(pageable);
-    }
+	public Page<Product> findProductByPriceDesc(Optional<Integer> p) {
+		Pageable pageable = PageRequest.of(p.orElse(0), 40);
+		return pRepo.findByPriceDesc(pageable);
+	}
+
 	@Override
 	public Page<Product> findProductByCategory(Optional<String> cid, Optional<Integer> p) {
 		String categoryId = cid.orElse(session.getValue("categoryId", ""));
@@ -257,6 +259,34 @@ public class ProductServiceImpl implements ProductService {
 		Pageable page = PageRequest.of(p.orElse(0), 6);
 		return pRepo.findByListCategory(cid, page);
 	}
+	
+	@Override
+	public List<Map<String, Object>> findProductByCreateDateDESC() {
+	    List<Product> products = pRepo.findByCreateDateOrderByDesc();
+
+	    TypeReference<List<String>> typeString = new TypeReference<List<String>>() {};
+	    ObjectMapper mapper = new ObjectMapper();
+	    List<String> images = new ArrayList<>();
+	    List<Map<String, Object>> db = new ArrayList<>();
+
+	    try {
+	        for (Product product : products) {
+	            Map<String, Object> map = new HashMap<>();
+	            product.getId();
+	            product.getName();
+	            product.getPrice();
+	            images = mapper.readValue(product.getImages(), typeString);
+	            map.put("product", product);
+	            map.put("images", images);
+	            db.add(map);
+	        }
+	    } catch (Exception e) {
+	        // Handle exception
+	    }
+
+	    return db;
+	}
+
 
 //	@Override
 //	public List<Map<String, Object>> findProductByKeywordAndPage(Optional<String> kw, Optional<String> cid, Optional<String> bid,

@@ -40,9 +40,13 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
 
 	@Query("SELECT DISTINCT p FROM Product p, ProductCategory pc WHERE p.id = pc.product.id AND pc.category.id IN :cid")
 	public Page<Product> findByListCategory(@Param("cid") List<String> cid, Pageable pageable);
+
 	public Page<Product> findByOrderByPriceAsc(Pageable pageable);
-	
+
 	@Query("SELECT p FROM Product p ORDER BY p.price DESC")
 	public Page<Product> findByPriceDesc(Pageable pageable);
+	
+	@Query("SELECT p FROM Product p ORDER BY p.createDate DESC")
+	public List<Product> findByCreateDateOrderByDesc();
 
 }

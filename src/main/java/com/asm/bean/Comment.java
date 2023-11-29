@@ -1,25 +1,20 @@
 package com.asm.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Date;
+import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "comments")
 public class Comment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    private String author;
-    private String content;
-    private Date createDate;
-	public Date getCreateDate() {
-		return createDate;
-	}
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	private String content;
+
+	@Column(name = "created_at")
+	private LocalDateTime createdAt;
+
+	// Constructors, getters, setters, etc.
 }
