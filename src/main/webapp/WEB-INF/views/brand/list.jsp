@@ -42,6 +42,7 @@
 		<div id="page-content">
 
 			<!--Collection Banner-->
+
 			<div class="collection-header">
 				<div class="collection-hero">
 					<div class="collection-hero__image"></div>
@@ -52,6 +53,7 @@
 					</div>
 				</div>
 			</div>
+
 			<!--End Collection Banner-->
 			<!--Breadcrumb-->
 			<div class="bredcrumbWrap">

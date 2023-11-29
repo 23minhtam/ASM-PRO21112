@@ -36,6 +36,7 @@
 	<div class="pageWrapper">
 		<%@include file="../layout/_header.jsp"%>
 		<!--Breadcrumb-->
+
 		<div class="bredcrumbWrap">
 			<div class="container breadcrumbs" role="navigation"
 				aria-label="breadcrumbs">
@@ -45,15 +46,18 @@
 			</div>
 		</div>
 		<!--End Breadcrumb-->
+
 		<!--Body Content-->
 		<div id="page-content">
 			<!--Page Title-->
 			<div class="page section-header text-center mt-5">
 				<div class="page-title">
 					<div class="wrapper">
+
 						<h1 class="page-width">
 							<s:message code="user.giohang" />
 						</h1>
+
 					</div>
 				</div>
 			</div>
@@ -66,11 +70,13 @@
 							<table>
 								<thead class="cart__row cart__header">
 									<tr>
+
 										<th colspan="2" class="text-center"><s:message
 												code="user.sanpham" /></th>
 										<th class="text-center"><s:message code="user.gia" /></th>
 										<th class="text-center"><s:message code="user.soluong" /></th>
 										<th class="text-right"><s:message code="user.tongcong" /></th>
+
 										<th class="action">&nbsp;</th>
 									</tr>
 								</thead>
@@ -117,6 +123,7 @@
 									<tr>
 										<td colspan="3" class="text-left"><a href="/product/list"
 											class="btn--link cart-continue"><i
+
 												class="icon icon-arrow-circle-left"></i> <s:message
 													code="user.tieptucmuasam" /></a></td>
 										<td colspan="3" class="text-right"><button
@@ -124,12 +131,15 @@
 												class="btn--link cart-update">
 												<i class="fa fa-refresh"></i>
 												<s:message code="user.capnhat" />
+
 											</button></td>
 									</tr>
 								</tfoot>
 							</table>
 
+
 							<div class="currencymsg"><s:message code="user.a" /></div>
+
 							<hr>
 
 
@@ -138,8 +148,10 @@
 					<div class="col-12 col-sm-12 col-md-4 col-lg-4 cart__footer">
 						<div class="solid-border">
 							<div class="row">
+
 								<span class="col-12 col-sm-6 cart__subtotal-title"><strong><s:message
 											code="user.tonghoadon" /></strong></span> <span
+
 									class="col-12 col-sm-6 cart__subtotal-title cart__subtotal text-right"><span
 									class="money">{{cart.amount | number: 0}} $</span></span>
 							</div>
